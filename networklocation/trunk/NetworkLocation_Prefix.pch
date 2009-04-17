@@ -1,0 +1,14 @@
+//
+//  NetworkLocation_Prefix.pch
+//  NetworkLocation
+//
+//  Created by J. Nicholas Jitkoff on 3/15/09.
+//  Copyright Google Inc 2009. All rights reserved.
+//
+
+
+#ifdef __OBJC__
+  #import <Cocoa/Cocoa.h>
+  #import <Vermilion/Vermilion.h>
+  #import <GTM/GTMDefines.h>
+#endif
