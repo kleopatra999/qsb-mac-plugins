@@ -1,0 +1,367 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F38DD3B0F68694B0051B7E3 /* Vermilion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F38DD3A0F68694B0051B7E3 /* Vermilion.framework */; };
+		7F38DE690F688CC20051B7E3 /* GTM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F38DE680F688CC20051B7E3 /* GTM.framework */; };
+		7F80FC720F696C5B00228142 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F80FC710F696C5B00228142 /* Cocoa.framework */; };
+		8B445D7B10F265FD00561E62 /* StockQuoter.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8B445D7A10F265FD00561E62 /* StockQuoter.icns */; };
+		8B445D7D10F2660A00561E62 /* StockQuoter.py in Resources */ = {isa = PBXBuildFile; fileRef = 8B445D7C10F2660A00561E62 /* StockQuoter.py */; };
+		8B445D8010F2661000561E62 /* StockQuoterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B445D7F10F2661000561E62 /* StockQuoterViewController.m */; };
+		8B445E5210F2666000561E62 /* GTMMethodCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B445DDD10F2666000561E62 /* GTMMethodCheck.m */; };
+		8B44612410F2685000561E62 /* GData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B44612310F2685000561E62 /* GData.framework */; };
+		8B44629310F26B0A00561E62 /* StockQuoter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B44629210F26B0A00561E62 /* StockQuoter.xib */; };
+		8B44629510F26B0A00561E62 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B44629410F26B0A00561E62 /* Localizable.strings */; };
+		8B44629710F26B0A00561E62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B44629610F26B0A00561E62 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7F38DCE90F6865290051B7E3 /* StockQuoter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockQuoter_Prefix.pch; sourceTree = "<group>"; };
+		7F38DD3A0F68694B0051B7E3 /* Vermilion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Vermilion.framework; sourceTree = QSBBUILDROOT; };
+		7F38DE680F688CC20051B7E3 /* GTM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTM.framework; sourceTree = QSBBUILDROOT; };
+		7F80FC710F696C5B00228142 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7F8450F40F6B1F7B000CD5C1 /* QSBDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = QSBDebug.xcconfig; path = QSB/xcconfig/QSBDebug.xcconfig; sourceTree = QSBSRCROOT; };
+		7F8450F50F6B1F7B000CD5C1 /* QSBRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = QSBRelease.xcconfig; path = QSB/xcconfig/QSBRelease.xcconfig; sourceTree = QSBSRCROOT; };
+		8B0D21FB0F7970DE00FD4A12 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		8B445D7A10F265FD00561E62 /* StockQuoter.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = StockQuoter.icns; sourceTree = "<group>"; };
+		8B445D7C10F2660A00561E62 /* StockQuoter.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = StockQuoter.py; sourceTree = "<group>"; };
+		8B445D7E10F2661000561E62 /* StockQuoterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockQuoterViewController.h; sourceTree = "<group>"; };
+		8B445D7F10F2661000561E62 /* StockQuoterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockQuoterViewController.m; sourceTree = "<group>"; };
+		8B445DDC10F2666000561E62 /* GTMMethodCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMMethodCheck.h; path = DebugUtils/GTMMethodCheck.h; sourceTree = "<group>"; };
+		8B445DDD10F2666000561E62 /* GTMMethodCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMMethodCheck.m; path = DebugUtils/GTMMethodCheck.m; sourceTree = "<group>"; };
+		8B44605910F267DE00561E62 /* GTMGoogleSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGoogleSearch.h; sourceTree = "<group>"; };
+		8B44609410F267DE00561E62 /* GTMNSScanner+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSScanner+JSON.h"; sourceTree = "<group>"; };
+		8B44612010F2682200561E62 /* GTMObjC2Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjC2Runtime.h; sourceTree = "<group>"; };
+		8B44612110F2683000561E62 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		8B44612310F2685000561E62 /* GData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GData.framework; path = ../../../../src3/googlemac/QuickSearchBox/QSB/build/Debug/GData.framework; sourceTree = SOURCE_ROOT; };
+		8B44628B10F26B0300561E62 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/StockQuoter.xib; sourceTree = "<group>"; };
+		8B44628C10F26B0300561E62 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B44628D10F26B0300561E62 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8BAA94490F7A6EBC00DF4F12 /* LoadableBundle.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = LoadableBundle.xcconfig; path = "externals/google-toolbox-for-mac/XcodeConfig/Target/LoadableBundle.xcconfig"; sourceTree = QSBSRCROOT; };
+		8D5B49B6048680CD000E48DA /* StockQuoter.hgs */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockQuoter.hgs; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* StockQuoter-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "StockQuoter-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F38DD3B0F68694B0051B7E3 /* Vermilion.framework in Frameworks */,
+				7F38DE690F688CC20051B7E3 /* GTM.framework in Frameworks */,
+				7F80FC720F696C5B00228142 /* Cocoa.framework in Frameworks */,
+				8B44612410F2685000561E62 /* GData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* StockQuoter */ = {
+			isa = PBXGroup;
+			children = (
+				8B0D21FB0F7970DE00FD4A12 /* README.txt */,
+				8B445D8710F2666000561E62 /* externals */,
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = StockQuoter;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B44629210F26B0A00561E62 /* StockQuoter.xib */,
+				8B44629410F26B0A00561E62 /* Localizable.strings */,
+				8B44629610F26B0A00561E62 /* InfoPlist.strings */,
+				8B445D7A10F265FD00561E62 /* StockQuoter.icns */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8B445D7E10F2661000561E62 /* StockQuoterViewController.h */,
+				8B445D7F10F2661000561E62 /* StockQuoterViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F80FC710F696C5B00228142 /* Cocoa.framework */,
+				8B44612310F2685000561E62 /* GData.framework */,
+				7F38DE680F688CC20051B7E3 /* GTM.framework */,
+				7F38DD3A0F68694B0051B7E3 /* Vermilion.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* StockQuoter.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8B445D7C10F2660A00561E62 /* StockQuoter.py */,
+				7F8450F40F6B1F7B000CD5C1 /* QSBDebug.xcconfig */,
+				7F8450F50F6B1F7B000CD5C1 /* QSBRelease.xcconfig */,
+				8BAA94490F7A6EBC00DF4F12 /* LoadableBundle.xcconfig */,
+				7F38DCE90F6865290051B7E3 /* StockQuoter_Prefix.pch */,
+				8D5B49B7048680CD000E48DA /* StockQuoter-Info.plist */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		8B445D8710F2666000561E62 /* externals */ = {
+			isa = PBXGroup;
+			children = (
+				8B445DB410F2666000561E62 /* google-toolbox-for-mac */,
+			);
+			path = externals;
+			sourceTree = QSBSRCROOT;
+		};
+		8B445DB410F2666000561E62 /* google-toolbox-for-mac */ = {
+			isa = PBXGroup;
+			children = (
+				8B44612110F2683000561E62 /* GTMDefines.h */,
+				8B445DD710F2666000561E62 /* DebugUtils */,
+				8B44604210F267DE00561E62 /* Foundation */,
+			);
+			path = "google-toolbox-for-mac";
+			sourceTree = "<group>";
+		};
+		8B445DD710F2666000561E62 /* DebugUtils */ = {
+			isa = PBXGroup;
+			children = (
+				8B445DDC10F2666000561E62 /* GTMMethodCheck.h */,
+				8B445DDD10F2666000561E62 /* GTMMethodCheck.m */,
+			);
+			name = DebugUtils;
+			sourceTree = "<group>";
+		};
+		8B44604210F267DE00561E62 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				8B44612010F2682200561E62 /* GTMObjC2Runtime.h */,
+				8B44605910F267DE00561E62 /* GTMGoogleSearch.h */,
+				8B44609410F267DE00561E62 /* GTMNSScanner+JSON.h */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* StockQuoter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "StockQuoter" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				8B445EF410F266DE00561E62 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StockQuoter;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = StockQuoter;
+			productReference = 8D5B49B6048680CD000E48DA /* StockQuoter.hgs */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "StockQuoter" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en_US,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* StockQuoter */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* StockQuoter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B445D7B10F265FD00561E62 /* StockQuoter.icns in Resources */,
+				8B445D7D10F2660A00561E62 /* StockQuoter.py in Resources */,
+				8B44629310F26B0A00561E62 /* StockQuoter.xib in Resources */,
+				8B44629510F26B0A00561E62 /* Localizable.strings in Resources */,
+				8B44629710F26B0A00561E62 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B445EF410F266DE00561E62 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -o errexit\nset -o nounset\nset -o verbose\n\n\"${QSBSRCROOT}/QSB/BuildScripts/Localization.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B445D8010F2661000561E62 /* StockQuoterViewController.m in Sources */,
+				8B445E5210F2666000561E62 /* GTMMethodCheck.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8B44629210F26B0A00561E62 /* StockQuoter.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B44628B10F26B0300561E62 /* English */,
+			);
+			name = StockQuoter.xib;
+			sourceTree = "<group>";
+		};
+		8B44629410F26B0A00561E62 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B44628C10F26B0300561E62 /* English */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		8B44629610F26B0A00561E62 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B44628D10F26B0300561E62 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(QSBBUILDROOT)",
+					"\"$(SRCROOT)/../../../../src3/googlemac/QuickSearchBox/externals/Sparkle\"",
+					"\"$(SRCROOT)/../../../../src3/googlemac/QuickSearchBox/externals/GoogleBreakpad\"",
+					"\"$(SRCROOT)/../../../../src3/googlemac/QuickSearchBox/externals/Growl\"",
+				);
+				GCC_PREFIX_HEADER = StockQuoter_Prefix.pch;
+				INFOPLIST_FILE = "StockQuoter-Info.plist";
+				PRODUCT_NAME = StockQuoter;
+				WRAPPER_EXTENSION = hgs;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(QSBBUILDROOT)",
+					"\"$(SRCROOT)/../../../../src3/googlemac/QuickSearchBox/externals/Sparkle\"",
+					"\"$(SRCROOT)/../../../../src3/googlemac/QuickSearchBox/externals/GoogleBreakpad\"",
+					"\"$(SRCROOT)/../../../../src3/googlemac/QuickSearchBox/externals/Growl\"",
+				);
+				GCC_PREFIX_HEADER = StockQuoter_Prefix.pch;
+				INFOPLIST_FILE = "StockQuoter-Info.plist";
+				PRODUCT_NAME = StockQuoter;
+				WRAPPER_EXTENSION = hgs;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F8450F40F6B1F7B000CD5C1 /* QSBDebug.xcconfig */;
+			buildSettings = {
+				GCC_DYNAMIC_NO_PIC = NO;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F8450F50F6B1F7B000CD5C1 /* QSBRelease.xcconfig */;
+			buildSettings = {
+				GCC_DYNAMIC_NO_PIC = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "StockQuoter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "StockQuoter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
