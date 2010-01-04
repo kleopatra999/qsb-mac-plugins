@@ -34,11 +34,9 @@
 		8B445D7F10F2661000561E62 /* StockQuoterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockQuoterViewController.m; sourceTree = "<group>"; };
 		8B445DDC10F2666000561E62 /* GTMMethodCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMMethodCheck.h; path = DebugUtils/GTMMethodCheck.h; sourceTree = "<group>"; };
 		8B445DDD10F2666000561E62 /* GTMMethodCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMMethodCheck.m; path = DebugUtils/GTMMethodCheck.m; sourceTree = "<group>"; };
-		8B44605910F267DE00561E62 /* GTMGoogleSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGoogleSearch.h; sourceTree = "<group>"; };
-		8B44609410F267DE00561E62 /* GTMNSScanner+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSScanner+JSON.h"; sourceTree = "<group>"; };
 		8B44612010F2682200561E62 /* GTMObjC2Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjC2Runtime.h; sourceTree = "<group>"; };
 		8B44612110F2683000561E62 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		8B44612310F2685000561E62 /* GData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GData.framework; path = ../../../../src3/googlemac/QuickSearchBox/QSB/build/Debug/GData.framework; sourceTree = SOURCE_ROOT; };
+		8B44612310F2685000561E62 /* GData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GData.framework; sourceTree = QSBBUILDROOT; };
 		8B44628B10F26B0300561E62 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/StockQuoter.xib; sourceTree = "<group>"; };
 		8B44628C10F26B0300561E62 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B44628D10F26B0300561E62 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -167,8 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				8B44612010F2682200561E62 /* GTMObjC2Runtime.h */,
-				8B44605910F267DE00561E62 /* GTMGoogleSearch.h */,
-				8B44609410F267DE00561E62 /* GTMNSScanner+JSON.h */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
