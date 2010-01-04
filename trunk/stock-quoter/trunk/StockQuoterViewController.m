@@ -11,10 +11,10 @@
 #import <Vermilion/Vermilion.h>
 #import <Vermilion/HGSPython.h>  // Must preceed import of <Python/structmember.h>.
 #import <Python/structmember.h>
-#import "GTMGoogleSearch.h"
-#import "GTMMethodCheck.h"
-#import "GTMNSScanner+JSON.h"
-#import "JSON/JSON.h"
+#import <GTM/GTMGoogleSearch.h>
+#import <GTM/GTMMethodCheck.h>
+#import <GTM/GTMNSScanner+JSON.h>
+#import <JSON/JSON.h>
 
 // Keys provided in the Google Finance JSON results for a given stock.
 static NSString *const kGoogleFinanceCompanyNameKey= @"name";
