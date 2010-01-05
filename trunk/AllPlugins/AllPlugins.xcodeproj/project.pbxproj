@@ -17,6 +17,7 @@
 				8BC02A3510F3BC0C0029CDA1 /* PBXTargetDependency */,
 				8BC02A3710F3BC0E0029CDA1 /* PBXTargetDependency */,
 				8BC02A3910F3BC100029CDA1 /* PBXTargetDependency */,
+				8B67236810F3E64700F62D01 /* PBXTargetDependency */,
 			);
 			name = AllPlugins;
 			productName = AllPlugins;
@@ -24,6 +25,20 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
+		8B67236510F3E64000F62D01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B67236110F3E64000F62D01 /* ApplicationUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* ApplicationUI.hgs */;
+			remoteInfo = ApplicationUI;
+		};
+		8B67236710F3E64700F62D01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B67236110F3E64000F62D01 /* ApplicationUI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* ApplicationUI */;
+			remoteInfo = ApplicationUI;
+		};
 		8BC02A1110F3BBC80029CDA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */;
@@ -83,6 +98,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B67236110F3E64000F62D01 /* ApplicationUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ApplicationUI.xcodeproj; path = "../application-ui/trunk/ApplicationUI.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkLocation.xcodeproj; path = ../networklocation/trunk/NetworkLocation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_RTM.xcodeproj; path = "../Send-To-RTM/trunk/Send_To_RTM.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StockQuoter.xcodeproj; path = "../stock-quoter/trunk/StockQuoter.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -90,9 +106,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		8B67236210F3E64000F62D01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B67236610F3E64000F62D01 /* ApplicationUI.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8BC02A0010F3BBB80029CDA1 = {
 			isa = PBXGroup;
 			children = (
+				8B67236110F3E64000F62D01 /* ApplicationUI.xcodeproj */,
 				8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */,
 				8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */,
 				8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */,
@@ -144,6 +169,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 8B67236210F3E64000F62D01 /* Products */;
+					ProjectRef = 8B67236110F3E64000F62D01 /* ApplicationUI.xcodeproj */;
+				},
+				{
 					ProductGroup = 8BC02A0B10F3BBC80029CDA1 /* Products */;
 					ProjectRef = 8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */;
 				},
@@ -168,6 +197,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8B67236610F3E64000F62D01 /* ApplicationUI.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ApplicationUI.hgs;
+			remoteRef = 8B67236510F3E64000F62D01 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8BC02A1210F3BBC80029CDA1 /* NetworkLocation.hgs */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -199,6 +235,11 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXTargetDependency section */
+		8B67236810F3E64700F62D01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ApplicationUI;
+			targetProxy = 8B67236710F3E64700F62D01 /* PBXContainerItemProxy */;
+		};
 		8BC02A3310F3BC0A0029CDA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Send_To_RTM;
