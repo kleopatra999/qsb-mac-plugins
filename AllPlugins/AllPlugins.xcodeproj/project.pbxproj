@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		8BC02A2F10F3BBF60029CDA1 /* AllPlugins */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8BC02A3B10F3BC2F0029CDA1 /* Build configuration list for PBXAggregateTarget "AllPlugins" */;
+			buildPhases = (
+			);
+			dependencies = (
+				8BC02A3310F3BC0A0029CDA1 /* PBXTargetDependency */,
+				8BC02A3510F3BC0C0029CDA1 /* PBXTargetDependency */,
+				8BC02A3710F3BC0E0029CDA1 /* PBXTargetDependency */,
+				8BC02A3910F3BC100029CDA1 /* PBXTargetDependency */,
+			);
+			name = AllPlugins;
+			productName = AllPlugins;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXContainerItemProxy section */
+		8BC02A1110F3BBC80029CDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = NetworkLocation;
+		};
+		8BC02A1A10F3BBCE0029CDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = Send_To_RTM;
+		};
+		8BC02A2310F3BBD60029CDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = StockQuoter;
+		};
+		8BC02A2C10F3BBE30029CDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = Twitter;
+		};
+		8BC02A3210F3BC0A0029CDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = Send_To_RTM;
+		};
+		8BC02A3410F3BC0C0029CDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = Twitter;
+		};
+		8BC02A3610F3BC0E0029CDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = NetworkLocation;
+		};
+		8BC02A3810F3BC100029CDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = StockQuoter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkLocation.xcodeproj; path = ../networklocation/trunk/NetworkLocation.xcodeproj; sourceTree = SOURCE_ROOT; };
+		8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_RTM.xcodeproj; path = "../Send-To-RTM/trunk/Send_To_RTM.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StockQuoter.xcodeproj; path = "../stock-quoter/trunk/StockQuoter.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Twitter.xcodeproj; path = ../twitter/trunk/Twitter.xcodeproj; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		8BC02A0010F3BBB80029CDA1 = {
+			isa = PBXGroup;
+			children = (
+				8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */,
+				8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */,
+				8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */,
+				8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		8BC02A0B10F3BBC80029CDA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BC02A1210F3BBC80029CDA1 /* NetworkLocation.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BC02A1410F3BBCE0029CDA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BC02A1B10F3BBCE0029CDA1 /* Send_To_RTM.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BC02A1D10F3BBD60029CDA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BC02A2410F3BBD60029CDA1 /* StockQuoter.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BC02A2610F3BBE30029CDA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BC02A2D10F3BBE30029CDA1 /* Twitter.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		8BC02A0210F3BBB80029CDA1 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 8BC02A0510F3BBB80029CDA1 /* Build configuration list for PBXProject "AllPlugins" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = 8BC02A0010F3BBB80029CDA1;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8BC02A0B10F3BBC80029CDA1 /* Products */;
+					ProjectRef = 8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */;
+				},
+				{
+					ProductGroup = 8BC02A1410F3BBCE0029CDA1 /* Products */;
+					ProjectRef = 8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */;
+				},
+				{
+					ProductGroup = 8BC02A1D10F3BBD60029CDA1 /* Products */;
+					ProjectRef = 8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */;
+				},
+				{
+					ProductGroup = 8BC02A2610F3BBE30029CDA1 /* Products */;
+					ProjectRef = 8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8BC02A2F10F3BBF60029CDA1 /* AllPlugins */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8BC02A1210F3BBC80029CDA1 /* NetworkLocation.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkLocation.hgs;
+			remoteRef = 8BC02A1110F3BBC80029CDA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8BC02A1B10F3BBCE0029CDA1 /* Send_To_RTM.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Send_To_RTM.hgs;
+			remoteRef = 8BC02A1A10F3BBCE0029CDA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8BC02A2410F3BBD60029CDA1 /* StockQuoter.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StockQuoter.hgs;
+			remoteRef = 8BC02A2310F3BBD60029CDA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8BC02A2D10F3BBE30029CDA1 /* Twitter.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Twitter.hgs;
+			remoteRef = 8BC02A2C10F3BBE30029CDA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXTargetDependency section */
+		8BC02A3310F3BC0A0029CDA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Send_To_RTM;
+			targetProxy = 8BC02A3210F3BC0A0029CDA1 /* PBXContainerItemProxy */;
+		};
+		8BC02A3510F3BC0C0029CDA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Twitter;
+			targetProxy = 8BC02A3410F3BC0C0029CDA1 /* PBXContainerItemProxy */;
+		};
+		8BC02A3710F3BC0E0029CDA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NetworkLocation;
+			targetProxy = 8BC02A3610F3BC0E0029CDA1 /* PBXContainerItemProxy */;
+		};
+		8BC02A3910F3BC100029CDA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StockQuoter;
+			targetProxy = 8BC02A3810F3BC100029CDA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8BC02A0310F3BBB80029CDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		8BC02A0410F3BBB80029CDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		8BC02A3010F3BBF60029CDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = AllPlugins;
+			};
+			name = Debug;
+		};
+		8BC02A3110F3BBF60029CDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = AllPlugins;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BC02A0510F3BBB80029CDA1 /* Build configuration list for PBXProject "AllPlugins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC02A0310F3BBB80029CDA1 /* Debug */,
+				8BC02A0410F3BBB80029CDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC02A3B10F3BC2F0029CDA1 /* Build configuration list for PBXAggregateTarget "AllPlugins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC02A3010F3BBF60029CDA1 /* Debug */,
+				8BC02A3110F3BBF60029CDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BC02A0210F3BBB80029CDA1 /* Project object */;
+}
