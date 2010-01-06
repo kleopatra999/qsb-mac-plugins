@@ -1,9 +1,0 @@
-2009-11-08 12|54|56.856 xcodebuild[17384:80b] Error loading /Developer/Library/Xcode/Plug-ins/XdesignCompilerPlugin.xcplugin/Contents/MacOS/XdesignCompilerPlugin:  dlopen(/Developer/Library/Xcode/Plug-ins/XdesignCompilerPlugin.xcplugin/Contents/MacOS/XdesignCompilerPlugin, 265): no suitable image found.  Did find:
-2009-11-08 12|54|56.857 xcodebuild[17384:80b] WARNING: Failed to load plugin at: /Developer/Library/Xcode/Plug-ins/XdesignCompilerPlugin.xcplugin, skipping.  Could not load bundle.
-2009-11-08 12|54|56.890 xcodebuild[17384:80b] WARNING: The Xcode plugin at path /Developer/Library/Xcode/Plug-ins/DocViewerPlugIn.xcplugin is missing the XCPluginHasUI Info.plist key, it is assumed to have UI and will not be loaded by xcodebuild.
-2009-11-08 12|54|56.968 xcodebuild[17384:80b] WARNING: Failed to load plugin at: /Developer/Library/Xcode/Plug-ins/XdesignCompilerPlugin.xcplugin, skipping.  Could not load bundle.
-2009-11-08 12|54|56.968 xcodebuild[17384:80b] WARNING: Failed to load plugin at: /Developer/Library/Xcode/Plug-ins/XdesignCompilerPlugin.xcplugin, skipping.  Could not load bundle.
-2009-11-08 12|54|56.969 xcodebuild[17384:80b] WARNING: Failed to load plugin at: /Developer/Library/Xcode/Plug-ins/XdesignCompilerPlugin.xcplugin, skipping.  Could not load bundle.
-2009-11-08 12|54|56.969 xcodebuild[17384:80b] WARNING: Failed to load plugin at: /Developer/Library/Xcode/Plug-ins/XdesignCompilerPlugin.xcplugin, skipping.  Could not load bundle.
-2009-11-08 12|54|56.969 xcodebuild[17384:80b] WARNING: Failed to load plugin at: /Developer/Library/Xcode/Plug-ins/XdesignCompilerPlugin.xcplugin, skipping.  Could not load bundle.
-2009-11-08 12|54|56.970 xcodebuild[17384:80b] WARNING: Failed to load plugin at: /Developer/Library/Xcode/Plug-ins/XdesignCompilerPlugin.xcplugin, skipping.  Could not load bundle.
