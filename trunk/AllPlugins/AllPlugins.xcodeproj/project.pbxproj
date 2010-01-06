@@ -80,6 +80,13 @@
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = StockQuoter;
 		};
+		F8AE3ED110F5048900082810 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* Send_To_THL.hgs */;
+			remoteInfo = Send_To_THL;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -87,12 +94,14 @@
 		8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_RTM.xcodeproj; path = "../Send-To-RTM/trunk/Send_To_RTM.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StockQuoter.xcodeproj; path = "../stock-quoter/trunk/StockQuoter.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Twitter.xcodeproj; path = ../twitter/trunk/Twitter.xcodeproj; sourceTree = SOURCE_ROOT; };
+		F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_THL.xcodeproj; path = "../Send-To-THL/Send_To_THL.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		8BC02A0010F3BBB80029CDA1 = {
 			isa = PBXGroup;
 			children = (
+				F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */,
 				8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */,
 				8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */,
 				8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */,
@@ -132,6 +141,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F8AE3ECB10F5048900082810 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8AE3ED210F5048900082810 /* Send_To_THL.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXProject section */
@@ -150,6 +167,10 @@
 				{
 					ProductGroup = 8BC02A1410F3BBCE0029CDA1 /* Products */;
 					ProjectRef = 8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */;
+				},
+				{
+					ProductGroup = F8AE3ECB10F5048900082810 /* Products */;
+					ProjectRef = F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */;
 				},
 				{
 					ProductGroup = 8BC02A1D10F3BBD60029CDA1 /* Products */;
@@ -194,6 +215,13 @@
 			fileType = wrapper.cfbundle;
 			path = Twitter.hgs;
 			remoteRef = 8BC02A2C10F3BBE30029CDA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F8AE3ED210F5048900082810 /* Send_To_THL.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Send_To_THL.hgs;
+			remoteRef = F8AE3ED110F5048900082810 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
