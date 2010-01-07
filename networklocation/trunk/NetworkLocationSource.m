@@ -52,6 +52,7 @@
     HGSResult *newObject = [HGSResult resultWithURL:url
                                                name:name
                                                type:@"other.networklocation"
+                                               rank:kHGSResultUnknownRank
                                              source:self
                                          attributes:nil];
     [self indexResult:newObject name:name otherTerm:nil];

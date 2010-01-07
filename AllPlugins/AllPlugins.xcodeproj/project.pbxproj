@@ -84,7 +84,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* Send_To_THL.hgs */;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = Send_To_THL;
 		};
 /* End PBXContainerItemProxy section */
