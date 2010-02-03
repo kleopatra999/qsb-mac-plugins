@@ -1,0 +1,18 @@
+#summary How to create a qsb plugin
+#labels Phase-Implementation
+
+*Work in progress* - please post questions to http://groups.google.com/group/qsb-mac-dev and we'll update this page with answers.
+
+== Getting the SDK ==
+Get the latest SDK (or build it from the top of QSB tree). Look for it here: http://code.google.com/p/qsb-mac/downloads/list
+
+== Setting up Xcode ==
+  # Go to "Xcode>Preferences" and click on the "Source Trees" icon.
+  # Click on the "Plus" button on the left hand side of the window.
+  # Set the "Setting Name" of your new tree to "`QSBBUILDROOT`"
+  # Set the "Display Name" to "`QSBBUILDROOT`"
+  # Set the path to the debug build directory for QSB. For me the path looks like this "`/Users/dmaclach/src/QuickSearchBox/QSB/build/Debug`". If you use a common build directory or some other customized build location, you will have to set it here.
+  # Click on the "Plus" button again
+  # Set the "Setting Name" of your new tree to "`QSBSRCROOT`"
+  # Set the "Display Name" to "`QSBSRCROOT`"
+  # Set the path to the root directory for QSB. For me the path looks like this "`/Users/dmaclach/src/QuickSearchBox`".
