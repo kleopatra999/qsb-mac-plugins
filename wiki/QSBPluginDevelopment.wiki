@@ -4,7 +4,7 @@
 *Work in progress* - please post questions to http://groups.google.com/group/qsb-mac-dev and we'll update this page with answers.
 
 == Getting the SDK ==
-Get the latest SDK (or build it from the top of QSB tree). Look for it here: http://code.google.com/p/qsb-mac/downloads/list
+Get the latest SDK (or build it from the [http://code.google.com/p/qsb-mac/source/checkout top of QSB tree]). Look for it here: http://code.google.com/p/qsb-mac/downloads/list
 
 == Setting up Xcode ==
   # Go to "Xcode>Preferences" and click on the "Source Trees" icon.
