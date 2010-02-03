@@ -1,5 +1,5 @@
 #summary How to create a qsb plugin
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured
 
 *Work in progress* - please post questions to http://groups.google.com/group/qsb-mac-dev and we'll update this page with answers.
 
