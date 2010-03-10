@@ -49,12 +49,12 @@
     name = [NSString stringWithFormat:@"%@ Network Location", name];
     NSString *urlString = [NSString stringWithFormat:@"qsb-netloc:%@", key];
     NSURL *url = [NSURL URLWithString:urlString];
-    HGSResult *newObject = [HGSResult resultWithURL:url
-                                               name:name
-                                               type:@"other.networklocation"
-                                               rank:kHGSResultUnknownRank
-                                             source:self
-                                         attributes:nil];
+    HGSUnscoredResult *newObject 
+      = [HGSUnscoredResult resultWithURL:url
+                                    name:name
+                                    type:@"other.networklocation"
+                                  source:self
+                              attributes:nil];
     [self indexResult:newObject name:name otherTerm:nil];
   }
   CFRelease(array);
