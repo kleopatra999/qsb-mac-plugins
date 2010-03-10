@@ -45,6 +45,8 @@
 			<string>StockQuoter</string>
 			<key>HGSSearchSourcePivotableTypes</key>
 			<array/>
+			<key>HGSSearchSourceSupportedTypes</key>
+			<string>script.python.stockquote</string>
 		</dict>
 	</array>
 </dict>

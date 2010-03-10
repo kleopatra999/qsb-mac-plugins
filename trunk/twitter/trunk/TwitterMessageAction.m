@@ -116,7 +116,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
                                @"A dialog label explaining that their Twitter "
                                @"message was too long and was truncated");
         [self informUserWithDescription:warningString
-                            successCode:kHGSSuccessCodeError];
+                            successCode:kHGSUserMessageWarningType];
         twitterMessage = [twitterMessage substringToIndex:140];
       }
       
@@ -172,7 +172,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
                              @"password for account %@");
       errorString = [NSString stringWithFormat:errorString, username];
       [self informUserWithDescription:errorString
-                          successCode:kHGSSuccessCodeError];
+                          successCode:kHGSUserMessageWarningType];
       HGSLog(@"TwitterMessageAction failed due to missing keychain item "
              @"for account '%@'.", [account_ displayName]);
     }
@@ -188,7 +188,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
                            @"A dialog label explaning that the user's message "
                            @"has been successfully sent to Twitter");
     [self informUserWithDescription:successString
-                        successCode:kHGSSuccessCodeSuccess];
+                        successCode:kHGSUserMessageNoteType];
   } else {
     NSString *errorFormat
       = HGSLocalizedString(@"Could not tweet! (%d)", 
@@ -196,7 +196,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
                            @"not tweet. %d is an status code.");
     NSString *errorString = [NSString stringWithFormat:errorFormat, statusCode];
     [self informUserWithDescription:errorString
-                        successCode:kHGSSuccessCodeBadError];
+                        successCode:kHGSUserMessageErrorType];
     HGSLog(@"TwitterMessageAction failed to tweet for account '%@': "
            @"status=%d.", [account_ displayName], statusCode);
   }
@@ -211,7 +211,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
   NSString *errorString = [NSString stringWithFormat:errorFormat,
                            [error code]];
   [self informUserWithDescription:errorString
-                      successCode:kHGSSuccessCodeBadError];
+                      successCode:kHGSUserMessageErrorType];
   HGSLog(@"TwitterMessageAction failed to tweet for account '%@': "
          @"error=%d '%@'.",
          [account_ displayName], [error code], [error localizedDescription]);
@@ -219,26 +219,19 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
 
 - (void)informUserWithDescription:(NSString *)description
                       successCode:(NSInteger)successCode {
-  NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
   NSBundle *bundle = HGSGetPluginBundle();
   NSString *path = [bundle pathForResource:@"Twitter" ofType:@"icns"];
   NSImage *twitterT
     = [[[NSImage alloc] initByReferencingFile:path] autorelease];
-  NSNumber *successNumber = [NSNumber numberWithInteger:successCode];
   NSString *summary 
     = HGSLocalizedString(@"Twitter", 
                          @"A dialog title. Twitter is a product name");
-  NSDictionary *messageDict
-    = [NSDictionary dictionaryWithObjectsAndKeys:
-       summary, kHGSSummaryMessageKey,
-       twitterT, kHGSImageMessageKey,
-       successNumber, kHGSSuccessCodeMessageKey,
-       // Description last since it might be nil.
-       description, kHGSDescriptionMessageKey,
-       nil];
-  [nc postNotificationName:kHGSUserMessageNotification 
-                    object:self
-                  userInfo:messageDict];
+  HGSUserMessenger *messenger = [HGSUserMessenger sharedUserMessenger];
+  [messenger displayUserMessage:summary 
+                    description:description 
+                           name:@"TwitterPluginMessage"
+                          image:twitterT 
+                           type:successCode];
 }
 
 - (void)loginCredentialsChanged:(NSNotification *)notification {

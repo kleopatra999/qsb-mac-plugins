@@ -116,15 +116,21 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
   return result;
 }
 
-- (HGSResult *)postFilterResult:(HGSMutableResult *)result 
-                matchesForQuery:(HGSQuery *)query
-                    pivotObject:(HGSResult *)pivotObject {
+- (HGSScoredResult *)postFilterScoredResult:(HGSScoredResult *)result 
+                            matchesForQuery:(HGSQuery *)query
+                               pivotObjects:(HGSResultArray *)pivotObjects {
   // If the query is empty, we must be pivoting - thus we boost the
   // rank of bookmarks that match the pivot to ensure they are displayed
   // (Anything that makes it to this method already matches the pivot)
-  BOOL emptyQuery = [[query normalizedQueryString] length] == 0;
+  BOOL emptyQuery = [[query tokenizedQueryString] originalLength] == 0;
   if (emptyQuery) {
-    [result setRank: HGSCalibratedScore(kHGSCalibratedStrongScore)];
+    CGFloat score = HGSCalibratedScore(kHGSCalibratedStrongScore);
+    result = [HGSScoredResult resultWithResult:result
+                                         score:score
+                                    flagsToSet:0
+                                  flagsToClear:0
+                                   matchedTerm:[result matchedTerm]
+                                matchedIndexes:[result matchedIndexes]];
   }
   
   return result;
@@ -263,12 +269,12 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
     [attributes setObject:iconImage forKey:kHGSObjectAttributeIconKey];
   }
 
-  HGSResult* result = [HGSResult resultWithURL:[NSURL URLWithString:url]
-                                          name:([title length] > 0 ? title : url)
-                                          type:type
-                                          rank:kHGSResultUnknownRank
-                                        source:self
-                                    attributes:attributes];
+  HGSUnscoredResult* result 
+    = [HGSUnscoredResult resultWithURL:[NSURL URLWithString:url]
+                                  name:([title length] > 0 ? title : url)
+                                  type:type
+                                source:self
+                            attributes:attributes];
   [self indexResult:result
                name:title
          otherTerms:tags];
@@ -304,7 +310,7 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     NSString *errorFormat = HGSLocalizedString(@"Authentication for '%@' failed."
                                                @"Check your password.", nil);
     NSString *errorString = [NSString stringWithFormat:errorFormat, userName];
-    [self reportConnectionFailure:errorString successCode:kHGSSuccessCodeError];
+    [self reportConnectionFailure:errorString successCode:kHGSUserMessageNoteType];
     HGSLogDebug(@"DeliciousBookmarkSource authentication failure for account '%@'.",
                 userName);
     return;
@@ -356,7 +362,7 @@ didReceiveResponse:(NSURLResponse *)response {
   NSString *errorFormat = HGSLocalizedString(@"Fetch for '%@' failed. (%d)", nil);
   NSString *errorString = [NSString stringWithFormat:errorFormat,
                            userName, [error code]];
-  [self reportConnectionFailure:errorString successCode:kHGSSuccessCodeBadError];
+  [self reportConnectionFailure:errorString successCode:kHGSUserMessageErrorType];
   HGSLogDebug(@"DeliciousBookmarkSource connection failure (%d) '%@'.",
               [error code], [error localizedDescription]);
 }
@@ -389,17 +395,13 @@ didReceiveResponse:(NSURLResponse *)response {
   NSTimeInterval timeSinceLastErrorReport = currentTime - previousErrorReportingTime_;
   if (timeSinceLastErrorReport > kDeliciousErrorReportingInterval) {
     previousErrorReportingTime_ = currentTime;
+    HGSUserMessenger *messenger = [HGSUserMessenger sharedUserMessenger];
     NSString *errorSummary = HGSLocalizedString(@"Delicious Bookmarks", nil);
-    NSNumber *successNumber = [NSNumber numberWithInt:successCode];
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    NSDictionary *messageDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 errorSummary, kHGSSummaryMessageKey,
-                                 explanation, kHGSDescriptionMessageKey,
-                                 successNumber, kHGSSuccessCodeMessageKey,
-                                 nil];
-    [nc postNotificationName:kHGSUserMessageNotification 
-                      object:self
-                    userInfo:messageDict];
+    [messenger displayUserMessage:errorSummary 
+                      description:explanation 
+                             name:@"DeliciousBookmarksSource" 
+                            image:nil
+                             type:successCode];
   }
 }
 

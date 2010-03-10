@@ -31,6 +31,8 @@
 			<string>HGSSourcesExtensionPoint</string>
 			<key>HGSExtensionUserVisibleName</key>
 			<string>Network Locations</string>
+			<key>HGSSearchSourceSupportedTypes</key>
+			<string>other.networklocation</string>
 		</dict>
 		<dict>
 			<key>HGSExtensionClass</key>

@@ -17,6 +17,9 @@
 				8BC02A3510F3BC0C0029CDA1 /* PBXTargetDependency */,
 				8BC02A3710F3BC0E0029CDA1 /* PBXTargetDependency */,
 				8BC02A3910F3BC100029CDA1 /* PBXTargetDependency */,
+				8BA918E51129BE8F004A431F /* PBXTargetDependency */,
+				8BA918E71129BE93004A431F /* PBXTargetDependency */,
+				8BA918E91129BE95004A431F /* PBXTargetDependency */,
 			);
 			name = AllPlugins;
 			productName = AllPlugins;
@@ -24,6 +27,41 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
+		8BA918D81129BE69004A431F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BA918D11129BE69004A431F /* Delicious.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = Delicious;
+		};
+		8BA918E11129BE75004A431F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BA918DA1129BE75004A431F /* Rot13.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = Rot13;
+		};
+		8BA918E41129BE8F004A431F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BA918D11129BE69004A431F /* Delicious.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = Delicious;
+		};
+		8BA918E61129BE93004A431F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = Send_To_THL;
+		};
+		8BA918E81129BE95004A431F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BA918DA1129BE75004A431F /* Rot13.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = Rot13;
+		};
 		8BC02A1110F3BBC80029CDA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */;
@@ -90,6 +128,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8BA918D11129BE69004A431F /* Delicious.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Delicious.xcodeproj; path = ../delicious/trunk/Delicious.xcodeproj; sourceTree = SOURCE_ROOT; };
+		8BA918DA1129BE75004A431F /* Rot13.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rot13.xcodeproj; path = ../rot13/trunk/Rot13.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkLocation.xcodeproj; path = ../networklocation/trunk/NetworkLocation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_RTM.xcodeproj; path = "../Send-To-RTM/trunk/Send_To_RTM.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StockQuoter.xcodeproj; path = "../stock-quoter/trunk/StockQuoter.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -98,6 +138,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		8BA918D21129BE69004A431F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BA918D91129BE69004A431F /* Delicious.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BA918DB1129BE75004A431F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BA918E21129BE75004A431F /* Rot13.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8BC02A0010F3BBB80029CDA1 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +162,8 @@
 				8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */,
 				8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */,
 				8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */,
+				8BA918DA1129BE75004A431F /* Rot13.xcodeproj */,
+				8BA918D11129BE69004A431F /* Delicious.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,8 +219,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 8BA918D21129BE69004A431F /* Products */;
+					ProjectRef = 8BA918D11129BE69004A431F /* Delicious.xcodeproj */;
+				},
+				{
 					ProductGroup = 8BC02A0B10F3BBC80029CDA1 /* Products */;
 					ProjectRef = 8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */;
+				},
+				{
+					ProductGroup = 8BA918DB1129BE75004A431F /* Products */;
+					ProjectRef = 8BA918DA1129BE75004A431F /* Rot13.xcodeproj */;
 				},
 				{
 					ProductGroup = 8BC02A1410F3BBCE0029CDA1 /* Products */;
@@ -189,6 +255,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8BA918D91129BE69004A431F /* Delicious.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Delicious.hgs;
+			remoteRef = 8BA918D81129BE69004A431F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8BA918E21129BE75004A431F /* Rot13.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Rot13.hgs;
+			remoteRef = 8BA918E11129BE75004A431F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8BC02A1210F3BBC80029CDA1 /* NetworkLocation.hgs */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -227,6 +307,21 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXTargetDependency section */
+		8BA918E51129BE8F004A431F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Delicious;
+			targetProxy = 8BA918E41129BE8F004A431F /* PBXContainerItemProxy */;
+		};
+		8BA918E71129BE93004A431F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Send_To_THL;
+			targetProxy = 8BA918E61129BE93004A431F /* PBXContainerItemProxy */;
+		};
+		8BA918E91129BE95004A431F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Rot13;
+			targetProxy = 8BA918E81129BE95004A431F /* PBXContainerItemProxy */;
+		};
 		8BC02A3310F3BC0A0029CDA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Send_To_RTM;

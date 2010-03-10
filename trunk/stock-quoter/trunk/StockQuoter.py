@@ -97,16 +97,28 @@ except ImportError:
       def Finish(self):
         self.finished = True
 
-  class VermilionLocalize(object):
-    """Stub class used when running from the command line.
+  class VermilionLocalizeStubClass(object):	
+    """Stub class used when running from the command line.	
 
-    Required when this script is run outside of the Quick Search Box.  This
-    class is not needed when Vermilion is provided in native code by the
+    Required when this script is run outside of the Quick Search Box.  This	
+    class is not needed when Vermilion is provided in native code by the	
     Quick Search runtime.
-    """
+    
+    When this source is called from QSB, i.e. when not being run from the
+    command line, user-visible strings can be localized by making a call
+    like:
+    
+      localized_string = VermilionLocalize.String(raw_string, self.extension)
+    
+    The localization version of all strings to be localized in this plugin
+    must be provided in the appropriate Localizable.strings file in the
+    plugin's bindle.
+    """	
 
-    def String(self, string):
+    def String(self, string, extension):	
       return string
+  
+  VermilionLocalize = VermilionLocalizeStubClass()
 
 QUOTE_URL = 'http://www.google.com/finance/info?infotype=infoquoteall&q=%s'
 SOURCE_URL = 'http://www.google.com/finance?q=%s'
@@ -141,8 +153,11 @@ class StockQuoter(object):
   IsValidSourceForQuery method.
   """
 
-  def __init__(self):
+  def __init__(self, extension=None):
     """Sets defaults for debugging and running from the command line.
+    
+    Args:
+      extension: An opaque instance of the extension.
 
     Modify the setting of debugging_is_enabled directly here if you
     want to see debugging information while running within another
@@ -150,7 +165,8 @@ class StockQuoter(object):
     """
     self.was_invoked_by_command_line = False
     self.debugging_is_enabled = False
-
+    self.extension = extension
+    
   def _GetInvokedByCommandLine(self):
     """Returns True if we were invoked by command line."""
     return self.was_invoked_by_command_line
@@ -327,7 +343,7 @@ class StockQuoter(object):
     if self.invoked_by_command_line:
       snippet_format = SNIPPET_FORMAT
     else:
-      snippet_format = VermilionLocalize.String(SNIPPET_FORMAT)
+      snippet_format = VermilionLocalize.String(SNIPPET_FORMAT, self.extension)
     snippet = snippet_format % (exchange_name, hi, lo, volume)
     if self.debugging_enabled:
       print "Snippet: %s." % snippet
