@@ -65,7 +65,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
 
 - (id)initWithConfiguration:(NSDictionary *)configuration {
   if ((self = [super initWithConfiguration:configuration])) {
-    account_ = [[configuration objectForKey:kHGSExtensionAccount] retain];
+    account_ = [[configuration objectForKey:kHGSExtensionAccountKey] retain];
     if (account_) {
       // Watch for credential changes.
       NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
