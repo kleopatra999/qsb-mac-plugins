@@ -51,7 +51,7 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
     NSBundle* sourceBundle = HGSGetPluginBundle();
     NSString *iconPath = [sourceBundle pathForImageResource:@"delicious"];
     tagIcon_ = [[NSImage alloc] initByReferencingFile:iconPath];    
-    account_ = [[configuration objectForKey:kHGSExtensionAccount] retain];
+    account_ = [[configuration objectForKey:kHGSExtensionAccountKey] retain];
     lastUpdate_ = [@"unknown" retain];
     if (account_) {
       HGSLogDebug(@"DeliciousBookmarks: Setting up fetcher");
