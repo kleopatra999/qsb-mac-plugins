@@ -310,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F8450F40F6B1F7B000CD5C1 /* QSBDebug.xcconfig */;
 			buildSettings = {
+				"ONLY_ACTIVE_ARCH[sdk=iphoneos*]" = NO;
 			};
 			name = Debug;
 		};
@@ -317,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F8450F50F6B1F7B000CD5C1 /* QSBRelease.xcconfig */;
 			buildSettings = {
+				"ONLY_ACTIVE_ARCH[sdk=iphoneos*]" = NO;
 			};
 			name = Release;
 		};

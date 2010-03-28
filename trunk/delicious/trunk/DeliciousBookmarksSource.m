@@ -100,19 +100,24 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
 
 - (HGSResult *)preFilterResult:(HGSResult *)result 
                matchesForQuery:(HGSQuery*)query
-                   pivotObject:(HGSResult *)pivotObject {
-  // Remove things that don't have the pivot tag.
-  if ([pivotObject conformsToType:HGS_SUBTYPE(kHGSTypeWebpage, @"delicioustag")]) {
-    NSString *tag = [pivotObject displayName];
-    NSSet *tags = [result valueForKey:kObjectAttributeDeliciousTags];
-    if (tags && [tags containsObject:tag]) {
-      HGSLogDebug(@"DeliciousBookmarkSource keeping '%@' during pivot on '%@'.",
-                  [result displayName], tag);
-    }
-    else {
-      result = nil;
+                  pivotObjects:(HGSResultArray *)pivotObjects {
+  // For the time being, only worry about handling a single pivot
+  if ([pivotObjects count] == 1) {
+    HGSResult *pivotObject = [pivotObjects objectAtIndex:0];
+    // Remove things that don't have the pivot tag.
+    if ([pivotObject conformsToType:HGS_SUBTYPE(kHGSTypeWebpage, @"delicioustag")]) {
+      NSString *tag = [pivotObject displayName];
+      NSSet *tags = [result valueForKey:kObjectAttributeDeliciousTags];
+      if (tags && [tags containsObject:tag]) {
+        HGSLogDebug(@"DeliciousBookmarkSource keeping '%@' during pivot on '%@'.",
+                    [result displayName], tag);
+      }
+      else {
+        result = nil;
+      }
     }
   }
+  
   return result;
 }
 
