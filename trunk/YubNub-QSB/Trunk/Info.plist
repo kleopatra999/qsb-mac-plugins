@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Send_To_RTM.${PRODUCT_NAME:identifier}</string>
+	<string>com.YubNub.${PRODUCT_NAME:identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -15,50 +15,30 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.5.5</string>
+	<string>1.0</string>
 	<key>HGSPluginAPIVersion</key>
 	<string>${VERMILLION_PLUGIN_API_VERSION}</string>
 	<key>HGSExtensions</key>
 	<array>
 		<dict>
 			<key>HGSExtensionIconImagePath</key>
-			<string>milk.png</string>
+			<string>YubNub.png</string>
 			<key>HGSPythonModule</key>
-			<string>Send_To_RTM</string>
+			<string>YubNub_QSB</string>
 			<key>HGSPythonClass</key>
-			<string>Task_Action</string>
+			<string>YubNub_Search</string>
 			<key>HGSExtensionClass</key>
 			<string>HGSPythonAction</string>
 			<key>HGSExtensionPoint</key>
 			<string>HGSActionsExtensionPoint</string>
 			<key>HGSExtensionIdentifier</key>
-			<string>com.Send_To_RTM.action.New_RTM_Task</string>
+			<string>com.YubNub.action.YubNub_QSB</string>
 			<key>HGSActionDirectObjectTypes</key>
 			<array>
 				<string>text</string>
 			</array>
 			<key>HGSExtensionUserVisibleName</key>
-			<string>New Task in RTM</string>
-		</dict>
-		<dict>
-			<key>HGSExtensionIconImagePath</key>
-			<string>milk.png</string>
-			<key>HGSPythonModule</key>
-			<string>Send_To_RTM</string>
-			<key>HGSPythonClass</key>
-			<string>List_Action</string>
-			<key>HGSExtensionClass</key>
-			<string>HGSPythonAction</string>
-			<key>HGSExtensionPoint</key>
-			<string>HGSActionsExtensionPoint</string>
-			<key>HGSExtensionIdentifier</key>
-			<string>com.Send_To_RTM.action.New_RTM_List</string>
-			<key>HGSActionDirectObjectTypes</key>
-			<array>
-				<string>text</string>
-			</array>
-			<key>HGSExtensionUserVisibleName</key>
-			<string>New List in RTM</string>
+			<string>Search with YubNub</string>
 		</dict>
 	</array>
 </dict>
