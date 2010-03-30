@@ -9,7 +9,7 @@ This plugin was NOT developed by the team at The Potion Factory, and they should
 # INSTALL
 - Download the latest version from the Downloads section
 - Mount the DMG
-- Drag the plugin into the shortcut to your Plugins folder
+- Drag the plugin your Plugins folder
 - Re-start Google Quick Search Box
 
 That's it!

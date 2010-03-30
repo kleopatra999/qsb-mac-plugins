@@ -11,7 +11,7 @@ This plugin was NOT developed by the team at Remember the Milk, and they should 
 # INSTALL
 - Download the latest version from the Downloads section
 - Mount the DMG
-- Drag the plugin into the shortcut to your Plugins folder
+- Drag the plugin into your Plugins folder
 - Re-start Google Quick Search Box
 
 That's it!
