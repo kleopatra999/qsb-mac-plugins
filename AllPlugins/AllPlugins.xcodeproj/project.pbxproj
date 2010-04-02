@@ -7,10 +7,23 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		8BA0DB451166502000839F5C /* Package Plugins */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8BA0DB4A1166504200839F5C /* Build configuration list for PBXAggregateTarget "Package Plugins" */;
+			buildPhases = (
+				8BA0DB6611665EED00839F5C /* ShellScript */,
+			);
+			dependencies = (
+				8BA0DB491166502400839F5C /* PBXTargetDependency */,
+			);
+			name = "Package Plugins";
+			productName = "Package Plugins";
+		};
 		8BC02A2F10F3BBF60029CDA1 /* AllPlugins */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 8BC02A3B10F3BC2F0029CDA1 /* Build configuration list for PBXAggregateTarget "AllPlugins" */;
 			buildPhases = (
+				8BA0DB1111664F0200839F5C /* CopyFiles */,
 			);
 			dependencies = (
 				8BC02A3310F3BC0A0029CDA1 /* PBXTargetDependency */,
@@ -18,15 +31,64 @@
 				8BC02A3710F3BC0E0029CDA1 /* PBXTargetDependency */,
 				8BC02A3910F3BC100029CDA1 /* PBXTargetDependency */,
 				8BA918E51129BE8F004A431F /* PBXTargetDependency */,
-				8BA918E71129BE93004A431F /* PBXTargetDependency */,
 				8BA918E91129BE95004A431F /* PBXTargetDependency */,
+				8BC8A572115DCE2F00A6E783 /* PBXTargetDependency */,
+				8BA0DB1D11664F1700839F5C /* PBXTargetDependency */,
+				8BA0DB4111664FE200839F5C /* PBXTargetDependency */,
 			);
 			name = AllPlugins;
 			productName = AllPlugins;
 		};
 /* End PBXAggregateTarget section */
 
+/* Begin PBXBuildFile section */
+		8BA0DB0911664EDE00839F5C /* KeychainItems.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC8A570115DCE0B00A6E783 /* KeychainItems.hgs */; };
+		8BA0DB0B11664EE500839F5C /* NetworkLocation.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A1210F3BBC80029CDA1 /* NetworkLocation.hgs */; };
+		8BA0DB0C11664EE700839F5C /* Send_To_RTM.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A1B10F3BBCE0029CDA1 /* Send_To_RTM.hgs */; };
+		8BA0DB0D11664EEA00839F5C /* StockQuoter.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A2410F3BBD60029CDA1 /* StockQuoter.hgs */; };
+		8BA0DB0E11664EEC00839F5C /* Twitter.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A2D10F3BBE30029CDA1 /* Twitter.hgs */; };
+		8BA0DB0F11664EFB00839F5C /* Rot13.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA918E21129BE75004A431F /* Rot13.hgs */; };
+		8BA0DB1011664EFD00839F5C /* Delicious.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA918D91129BE69004A431F /* Delicious.hgs */; };
+		8BA0DB1B11664F1100839F5C /* YubNub-QSB.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA0DB1A11664F0D00839F5C /* YubNub-QSB.hgs */; };
+		8BA0DB4211664FEC00839F5C /* Send_To_THL.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA0DB3F11664FD900839F5C /* Send_To_THL.hgs */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		8BA0DB1911664F0D00839F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* YubNub-QSB.hgs */;
+			remoteInfo = "YubNub-QSB";
+		};
+		8BA0DB1C11664F1700839F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* YubNub-QSB */;
+			remoteInfo = "YubNub-QSB";
+		};
+		8BA0DB3E11664FD900839F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* Send_To_THL.hgs */;
+			remoteInfo = Send_To_THL;
+		};
+		8BA0DB4011664FE200839F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* Send_To_THL */;
+			remoteInfo = Send_To_THL;
+		};
+		8BA0DB481166502400839F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A0210F3BBB80029CDA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BC02A2F10F3BBF60029CDA1 /* AllPlugins */;
+			remoteInfo = AllPlugins;
+		};
 		8BA918D81129BE69004A431F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BA918D11129BE69004A431F /* Delicious.xcodeproj */;
@@ -47,13 +109,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = Delicious;
-		};
-		8BA918E61129BE93004A431F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
-			remoteInfo = Send_To_THL;
 		};
 		8BA918E81129BE95004A431F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -118,26 +173,72 @@
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = StockQuoter;
 		};
-		F8AE3ED110F5048900082810 /* PBXContainerItemProxy */ = {
+		8BC8A56F115DCE0B00A6E783 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */;
+			containerPortal = 8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
-			remoteInfo = Send_To_THL;
+			remoteInfo = KeychainItems;
+		};
+		8BC8A571115DCE2F00A6E783 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = KeychainItems;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8BA0DB1111664F0200839F5C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				8BA0DB4211664FEC00839F5C /* Send_To_THL.hgs in CopyFiles */,
+				8BA0DB0911664EDE00839F5C /* KeychainItems.hgs in CopyFiles */,
+				8BA0DB1011664EFD00839F5C /* Delicious.hgs in CopyFiles */,
+				8BA0DB0E11664EEC00839F5C /* Twitter.hgs in CopyFiles */,
+				8BA0DB0B11664EE500839F5C /* NetworkLocation.hgs in CopyFiles */,
+				8BA0DB0F11664EFB00839F5C /* Rot13.hgs in CopyFiles */,
+				8BA0DB0D11664EEA00839F5C /* StockQuoter.hgs in CopyFiles */,
+				8BA0DB0C11664EE700839F5C /* Send_To_RTM.hgs in CopyFiles */,
+				8BA0DB1B11664F1100839F5C /* YubNub-QSB.hgs in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "YubNub-QSB.xcodeproj"; path = "../YubNub-QSB/Trunk/YubNub-QSB.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_THL.xcodeproj; path = "../Send-To-THL/trunk/Send_To_THL.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BA918D11129BE69004A431F /* Delicious.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Delicious.xcodeproj; path = ../delicious/trunk/Delicious.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8BA918DA1129BE75004A431F /* Rot13.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rot13.xcodeproj; path = ../rot13/trunk/Rot13.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkLocation.xcodeproj; path = ../networklocation/trunk/NetworkLocation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_RTM.xcodeproj; path = "../Send-To-RTM/trunk/Send_To_RTM.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StockQuoter.xcodeproj; path = "../stock-quoter/trunk/StockQuoter.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Twitter.xcodeproj; path = ../twitter/trunk/Twitter.xcodeproj; sourceTree = SOURCE_ROOT; };
-		F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_THL.xcodeproj; path = "../Send-To-THL/Send_To_THL.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainItems.xcodeproj; path = ../keychainitems/trunk/KeychainItems.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		8BA0DB1311664F0D00839F5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BA0DB1A11664F0D00839F5C /* YubNub-QSB.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BA0DB3811664FD900839F5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BA0DB3F11664FD900839F5C /* Send_To_THL.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8BA918D21129BE69004A431F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,13 +258,15 @@
 		8BC02A0010F3BBB80029CDA1 = {
 			isa = PBXGroup;
 			children = (
-				F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */,
+				8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */,
+				8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */,
 				8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */,
 				8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */,
 				8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */,
 				8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */,
 				8BA918DA1129BE75004A431F /* Rot13.xcodeproj */,
 				8BA918D11129BE69004A431F /* Delicious.xcodeproj */,
+				8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,10 +302,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F8AE3ECB10F5048900082810 /* Products */ = {
+		8BC8A569115DCE0B00A6E783 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F8AE3ED210F5048900082810 /* Send_To_THL.hgs */,
+				8BC8A570115DCE0B00A6E783 /* KeychainItems.hgs */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +326,10 @@
 					ProjectRef = 8BA918D11129BE69004A431F /* Delicious.xcodeproj */;
 				},
 				{
+					ProductGroup = 8BC8A569115DCE0B00A6E783 /* Products */;
+					ProjectRef = 8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */;
+				},
+				{
 					ProductGroup = 8BC02A0B10F3BBC80029CDA1 /* Products */;
 					ProjectRef = 8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */;
 				},
@@ -235,8 +342,8 @@
 					ProjectRef = 8BC02A1310F3BBCE0029CDA1 /* Send_To_RTM.xcodeproj */;
 				},
 				{
-					ProductGroup = F8AE3ECB10F5048900082810 /* Products */;
-					ProjectRef = F8AE3ECA10F5048900082810 /* Send_To_THL.xcodeproj */;
+					ProductGroup = 8BA0DB3811664FD900839F5C /* Products */;
+					ProjectRef = 8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */;
 				},
 				{
 					ProductGroup = 8BC02A1D10F3BBD60029CDA1 /* Products */;
@@ -246,15 +353,34 @@
 					ProductGroup = 8BC02A2610F3BBE30029CDA1 /* Products */;
 					ProjectRef = 8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */;
 				},
+				{
+					ProductGroup = 8BA0DB1311664F0D00839F5C /* Products */;
+					ProjectRef = 8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
 				8BC02A2F10F3BBF60029CDA1 /* AllPlugins */,
+				8BA0DB451166502000839F5C /* Package Plugins */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8BA0DB1A11664F0D00839F5C /* YubNub-QSB.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "YubNub-QSB.hgs";
+			remoteRef = 8BA0DB1911664F0D00839F5C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8BA0DB3F11664FD900839F5C /* Send_To_THL.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Send_To_THL.hgs;
+			remoteRef = 8BA0DB3E11664FD900839F5C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8BA918D91129BE69004A431F /* Delicious.hgs */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -297,25 +423,51 @@
 			remoteRef = 8BC02A2C10F3BBE30029CDA1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F8AE3ED210F5048900082810 /* Send_To_THL.hgs */ = {
+		8BC8A570115DCE0B00A6E783 /* KeychainItems.hgs */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = Send_To_THL.hgs;
-			remoteRef = F8AE3ED110F5048900082810 /* PBXContainerItemProxy */;
+			path = KeychainItems.hgs;
+			remoteRef = 8BC8A56F115DCE0B00A6E783 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8BA0DB6611665EED00839F5C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Quick script for packaging plugins. Note that QSB_VERSION must be set in project settings.\n\nset -o errexit\nset -o nounset\nset -o verbose\n\npushd \"${CONFIGURATION_BUILD_DIR}\"\nPLUGINS=\"*.hgs\"\nfor f in $PLUGINS\ndo\nzip -r \"${f}\".$QSB_VERSION.zip ${f}\ndone\npopd";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXTargetDependency section */
+		8BA0DB1D11664F1700839F5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "YubNub-QSB";
+			targetProxy = 8BA0DB1C11664F1700839F5C /* PBXContainerItemProxy */;
+		};
+		8BA0DB4111664FE200839F5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Send_To_THL;
+			targetProxy = 8BA0DB4011664FE200839F5C /* PBXContainerItemProxy */;
+		};
+		8BA0DB491166502400839F5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BC02A2F10F3BBF60029CDA1 /* AllPlugins */;
+			targetProxy = 8BA0DB481166502400839F5C /* PBXContainerItemProxy */;
+		};
 		8BA918E51129BE8F004A431F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Delicious;
 			targetProxy = 8BA918E41129BE8F004A431F /* PBXContainerItemProxy */;
-		};
-		8BA918E71129BE93004A431F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Send_To_THL;
-			targetProxy = 8BA918E61129BE93004A431F /* PBXContainerItemProxy */;
 		};
 		8BA918E91129BE95004A431F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -342,29 +494,52 @@
 			name = StockQuoter;
 			targetProxy = 8BC02A3810F3BC100029CDA1 /* PBXContainerItemProxy */;
 		};
+		8BC8A572115DCE2F00A6E783 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KeychainItems;
+			targetProxy = 8BC8A571115DCE2F00A6E783 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		8BC02A0310F3BBB80029CDA1 /* Debug */ = {
+		8BA0DB461166502000839F5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Package Plugins";
+			};
+			name = Debug;
+		};
+		8BA0DB471166502000839F5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Package Plugins";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		8BC02A0310F3BBB80029CDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				QSB_VERSION = 3246;
 			};
 			name = Debug;
 		};
 		8BC02A0410F3BBB80029CDA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
+				QSB_VERSION = 3246;
 			};
 			name = Release;
 		};
 		8BC02A3010F3BBF60029CDA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = AllPlugins;
 			};
 			name = Debug;
@@ -372,17 +547,22 @@
 		8BC02A3110F3BBF60029CDA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = AllPlugins;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8BA0DB4A1166504200839F5C /* Build configuration list for PBXAggregateTarget "Package Plugins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BA0DB461166502000839F5C /* Debug */,
+				8BA0DB471166502000839F5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8BC02A0510F3BBB80029CDA1 /* Build configuration list for PBXProject "AllPlugins" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
