@@ -1,0 +1,14 @@
+//
+//  openmeta_Prefix.pch
+//  openmeta
+//
+//  Created by Dave MacLachlan on 2010-04-07.
+//  Copyright Google Inc 2010. All rights reserved.
+//
+
+
+#ifdef __OBJC__
+  #import <Cocoa/Cocoa.h>
+  #import <Vermilion/Vermilion.h>
+  #import <GTM/GTMDefines.h>
+#endif
