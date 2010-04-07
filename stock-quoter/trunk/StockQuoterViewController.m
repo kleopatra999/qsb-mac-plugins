@@ -306,10 +306,11 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
   finishedWithData:(NSData *)chartData {
   [self setChartFetcher:nil];
   NSOperationQueue *queue = [HGSOperationQueue sharedOperationQueue];
-  [queue addOperation:[HGSInvocationOperation
-                       memoryInvocationOperationWithTarget:self
-                       selector:@selector(updateChartWithData:)
-                       object:chartData]];
+  NSOperation *op 
+    = [[[NSInvocationOperation alloc] initWithTarget:self
+                                            selector:@selector(updateChartWithData:)
+                                              object:chartData] autorelease];
+  [queue addOperation:op];
 }
 
 - (void)chartFetcher:(GDataHTTPFetcher *)fetcher

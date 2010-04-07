@@ -58,35 +58,35 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* YubNub-QSB.hgs */;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = "YubNub-QSB";
 		};
 		8BA0DB1C11664F1700839F5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* YubNub-QSB */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = "YubNub-QSB";
 		};
 		8BA0DB3E11664FD900839F5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* Send_To_THL.hgs */;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = Send_To_THL;
 		};
 		8BA0DB4011664FE200839F5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* Send_To_THL */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = Send_To_THL;
 		};
 		8BA0DB481166502400839F5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BC02A0210F3BBB80029CDA1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8BC02A2F10F3BBF60029CDA1 /* AllPlugins */;
+			remoteGlobalIDString = 8BC02A2F10F3BBF60029CDA1;
 			remoteInfo = AllPlugins;
 		};
 		8BA918D81129BE69004A431F /* PBXContainerItemProxy */ = {
@@ -526,14 +526,14 @@
 		8BC02A0310F3BBB80029CDA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				QSB_VERSION = 3246;
+				QSB_VERSION = 3283;
 			};
 			name = Debug;
 		};
 		8BC02A0410F3BBB80029CDA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				QSB_VERSION = 3246;
+				QSB_VERSION = 3283;
 			};
 			name = Release;
 		};
