@@ -13,6 +13,9 @@
 		7F38DE690F688CC20051B7E3 /* GTM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F38DE680F688CC20051B7E3 /* GTM.framework */; };
 		7F80FC720F696C5B00228142 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F80FC710F696C5B00228142 /* Cocoa.framework */; };
 		8B0D217E0F796E1C00FD4A12 /* HGSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0D217D0F796E1C00FD4A12 /* HGSBundle.m */; };
+		8B39F0C5116D47D200D9743F /* OpenMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B39F0AA116D47D200D9743F /* OpenMeta.m */; };
+		8B39F0FB116D669500D9743F /* OpenMetaBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B39F0FA116D669500D9743F /* OpenMetaBackup.m */; };
+		8B39F101116D679600D9743F /* OpenMetaPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B39F100116D679600D9743F /* OpenMetaPrefs.m */; };
 		8B3F7232101AD938004FACA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B3F7230101AD938004FACA9 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,12 @@
 		7F8450F50F6B1F7B000CD5C1 /* QSBRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = QSBRelease.xcconfig; path = QSB/xcconfig/QSBRelease.xcconfig; sourceTree = QSBSRCROOT; };
 		8B0D217D0F796E1C00FD4A12 /* HGSBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HGSBundle.m; path = ../Vermilion/Vermilion/HGSBundle.m; sourceTree = QSBSRCROOT; };
 		8B0D21FB0F7970DE00FD4A12 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		8B39F0A9116D47D200D9743F /* OpenMeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenMeta.h; sourceTree = "<group>"; };
+		8B39F0AA116D47D200D9743F /* OpenMeta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenMeta.m; sourceTree = "<group>"; };
+		8B39F0F9116D669500D9743F /* OpenMetaBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenMetaBackup.h; sourceTree = "<group>"; };
+		8B39F0FA116D669500D9743F /* OpenMetaBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenMetaBackup.m; sourceTree = "<group>"; };
+		8B39F0FF116D679600D9743F /* OpenMetaPrefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenMetaPrefs.h; sourceTree = "<group>"; };
+		8B39F100116D679600D9743F /* OpenMetaPrefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenMetaPrefs.m; sourceTree = "<group>"; };
 		8B3F7231101AD938004FACA9 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		8BAA94490F7A6EBC00DF4F12 /* LoadableBundle.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = LoadableBundle.xcconfig; path = "externals/google-toolbox-for-mac/XcodeConfig/Target/LoadableBundle.xcconfig"; sourceTree = QSBSRCROOT; };
 		8D5B49B6048680CD000E48DA /* openmeta.hgs */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = openmeta.hgs; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				8B0D21FB0F7970DE00FD4A12 /* README.txt */,
+				8B39F098116D47D200D9743F /* externals */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -114,6 +124,27 @@
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		8B39F098116D47D200D9743F /* externals */ = {
+			isa = PBXGroup;
+			children = (
+				8B39F099116D47D200D9743F /* openmeta */,
+			);
+			path = externals;
+			sourceTree = "<group>";
+		};
+		8B39F099116D47D200D9743F /* openmeta */ = {
+			isa = PBXGroup;
+			children = (
+				8B39F0A9116D47D200D9743F /* OpenMeta.h */,
+				8B39F0AA116D47D200D9743F /* OpenMeta.m */,
+				8B39F0F9116D669500D9743F /* OpenMetaBackup.h */,
+				8B39F0FA116D669500D9743F /* OpenMetaBackup.m */,
+				8B39F0FF116D679600D9743F /* OpenMetaPrefs.h */,
+				8B39F100116D679600D9743F /* OpenMetaPrefs.m */,
+			);
+			path = openmeta;
 			sourceTree = "<group>";
 		};
 		8B3F722F101AD938004FACA9 /* English.lproj */ = {
@@ -205,6 +236,9 @@
 				7F38DCE40F6864D90051B7E3 /* openmetaSource.m in Sources */,
 				7F38DCE50F6864D90051B7E3 /* openmetaAction.m in Sources */,
 				8B0D217E0F796E1C00FD4A12 /* HGSBundle.m in Sources */,
+				8B39F0C5116D47D200D9743F /* OpenMeta.m in Sources */,
+				8B39F0FB116D669500D9743F /* OpenMetaBackup.m in Sources */,
+				8B39F101116D679600D9743F /* OpenMetaPrefs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +265,8 @@
 					"$(QSBBUILDROOT)",
 				);
 				GCC_PREFIX_HEADER = openmeta_Prefix.pch;
+				GTM_GENERAL_WARNING_CFLAGS1 = "-Wall -Wendif-labels -Winvalid-pch -Wformat=2 -Wmissing-format-attribute -Wwrite-strings -Wstrict-aliasing=2 -Wno-parentheses";
+				GTM_GENERAL_WARNING_CFLAGS3 = "-Wextra $(GTM_EXTRA_WARNING_OVERRIDE_CFLAGS) -Wpointer-arith -Wdisabled-optimization ";
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = openmeta;
 				WRAPPER_EXTENSION = hgs;
@@ -246,6 +282,8 @@
 					"$(QSBBUILDROOT)",
 				);
 				GCC_PREFIX_HEADER = openmeta_Prefix.pch;
+				GTM_GENERAL_WARNING_CFLAGS1 = "-Wall -Wendif-labels -Winvalid-pch -Wformat=2 -Wmissing-format-attribute -Wwrite-strings -Wstrict-aliasing=2 -Wno-parentheses";
+				GTM_GENERAL_WARNING_CFLAGS3 = "-Wextra $(GTM_EXTRA_WARNING_OVERRIDE_CFLAGS) -Wpointer-arith -Wdisabled-optimization ";
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = openmeta;
 				WRAPPER_EXTENSION = hgs;
