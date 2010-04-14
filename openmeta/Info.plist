@@ -9,7 +9,7 @@
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.${PRODUCT_NAME:identifier}</string>
+	<string>com.google.qsb.openmeta.plugin</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -22,9 +22,9 @@
 	<array>
 		<dict>
 			<key>HGSExtensionClass</key>
-			<string>openmetaSource</string>
+			<string>OpenMetaSource</string>
 			<key>HGSExtensionIdentifier</key>
-			<string>com.yourcompany.source.openmeta</string>
+			<string>com.google.qsb.openmeta.source</string>
 			<key>HGSExtensionPoint</key>
 			<string>HGSSourcesExtensionPoint</string>
 			<key>HGSExtensionUserVisibleName</key>
@@ -36,19 +36,53 @@
 		</dict>
 		<dict>
 			<key>HGSExtensionClass</key>
-			<string>openmetaAction</string>
+			<string>OpenMetaActionAddTag</string>
 			<key>HGSExtensionPoint</key>
 			<string>HGSActionsExtensionPoint</string>
 			<key>HGSExtensionIdentifier</key>
-			<string>com.yourcompany.action.openmeta</string>
+			<string>com.google.qsb.openmeta.action.addTag</string>
 			<key>HGSActionDirectObjectTypes</key>
 			<array>
-				<string>*</string>
+				<string>file</string>
 			</array>
 			<key>HGSExtensionUserVisibleName</key>
-			<string>openmeta Action</string>
+			<string>Add Tag</string>
 			<key>HGSExtensionIconImagePath</key>
 			<string></string>
+			<key>HGSActionArguments</key>
+			<dict>
+				<key>HGSActionArgumentIdentifier</key>
+				<string>com.google.qsb.openmeta.action.argument.tag</string>
+				<key>HGSActionArgumentSupportedTypes</key>
+				<string>text.userinput</string>
+				<key>HGSActionArgumentClass</key>
+				<string>OpenMetaActionTagArgument</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>HGSExtensionClass</key>
+			<string>OpenMetaActionRemoveTag</string>
+			<key>HGSExtensionPoint</key>
+			<string>HGSActionsExtensionPoint</string>
+			<key>HGSExtensionIdentifier</key>
+			<string>com.google.qsb.openmeta.action.removeTag</string>
+			<key>HGSActionDirectObjectTypes</key>
+			<array>
+				<string>file</string>
+			</array>
+			<key>HGSExtensionUserVisibleName</key>
+			<string>Remove Tag</string>
+			<key>HGSExtensionIconImagePath</key>
+			<string></string>
+			<key>HGSActionArguments</key>
+			<dict>
+				<key>HGSActionArgumentIdentifier</key>
+				<string>com.google.qsb.openmeta.action.argument.tag</string>
+				<key>HGSActionArgumentSupportedTypes</key>
+				<string>text.userinput</string>
+				<key>HGSActionArgumentClass</key>
+				<string>OpenMetaActionTagArgument</string>
+			</dict>
 		</dict>
 	</array>
 </dict>

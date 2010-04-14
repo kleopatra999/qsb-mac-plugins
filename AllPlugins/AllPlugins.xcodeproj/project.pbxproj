@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		8B17FD741176580900E7A908 /* Upload Plugins */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8B17FD7B1176581A00E7A908 /* Build configuration list for PBXAggregateTarget "Upload Plugins" */;
+			buildPhases = (
+				8B17FD731176580900E7A908 /* ShellScript */,
+			);
+			dependencies = (
+				8B17FD781176580D00E7A908 /* PBXTargetDependency */,
+			);
+			name = "Upload Plugins";
+			productName = "Upload Plugins";
+		};
 		8BA0DB451166502000839F5C /* Package Plugins */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 8BA0DB4A1166504200839F5C /* Build configuration list for PBXAggregateTarget "Package Plugins" */;
@@ -54,6 +66,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8B17FD771176580D00E7A908 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A0210F3BBB80029CDA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BA0DB451166502000839F5C /* Package Plugins */;
+			remoteInfo = "Package Plugins";
+		};
 		8BA0DB1911664F0D00839F5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */;
@@ -211,6 +230,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B17FDAC117661DD00E7A908 /* googlecode_upload.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = googlecode_upload.py; sourceTree = "<group>"; };
 		8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "YubNub-QSB.xcodeproj"; path = "../YubNub-QSB/Trunk/YubNub-QSB.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_THL.xcodeproj; path = "../Send-To-THL/trunk/Send_To_THL.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BA918D11129BE69004A431F /* Delicious.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Delicious.xcodeproj; path = ../delicious/trunk/Delicious.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -258,6 +278,7 @@
 		8BC02A0010F3BBB80029CDA1 = {
 			isa = PBXGroup;
 			children = (
+				8B17FDAC117661DD00E7A908 /* googlecode_upload.py */,
 				8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */,
 				8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */,
 				8BC02A0A10F3BBC80029CDA1 /* NetworkLocation.xcodeproj */,
@@ -362,6 +383,7 @@
 			targets = (
 				8BC02A2F10F3BBF60029CDA1 /* AllPlugins */,
 				8BA0DB451166502000839F5C /* Package Plugins */,
+				8B17FD741176580900E7A908 /* Upload Plugins */,
 			);
 		};
 /* End PBXProject section */
@@ -433,6 +455,19 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8B17FD731176580900E7A908 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# You must set GOOGLE_CODE_USER to your Google code user name\n# and GOOGLE_CODE_PASSWORD to your Google code password (not your email password, but your actual code password)\n\nset -o errexit\nset -o nounset\nset -o verbose\n\n# Must keep these arrays in order. No 2-D arrays in bash.\nPLUGINS=( \"Delicious\"\n          \"Twitter\"\n          \"StockQuoter\"\n          \"Send_To_THL\"\n          \"Send_To_RTM\"\n          \"Rot13\"\n          \"KeychainItems\"\n          \"YubNub-QSB\"\n          \"NetworkLocation\" )\nDESCRIPTIONS=( \"Search your delicious bookmarks. (http://delicious.com/)\"\n               \"Post to twitter. (http://twitter.com)\"\n               \"Search for stock information and display directly in QSB.\"\n               \"Send a note to The Hit List. (http://www.potionfactory.com/thehitlist/)\"\n               \"Send a note to Remember The Milk. (http://www.rememberthemilk.com)\"\n               \"Rot 13 encode text. (http://en.wikipedia.org/wiki/ROT13)\"\n               \"Search your keychain.\"\n               \"Search yubnub. (http://yubnub.org/)\"\n               \"Search your network locations.\" )\n\nindex=0\nfor PLUGIN in \"${PLUGINS[@]}\"; do\n\t\"${SRCROOT}/googlecode_upload.py\" -p qsb-mac-plugins -s \"${DESCRIPTIONS[$index]}\" -u $GOOGLE_CODE_USER -w $GOOGLE_CODE_PASSWORD -l Featured,Type-Archive,OpSys-OSX \"${BUILT_PRODUCTS_DIR}/${PLUGIN}.hgs.${QSB_VERSION}.zip\"\n\tlet \"index = $index + 1\"\ndone";
+		};
 		8BA0DB6611665EED00839F5C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -449,6 +484,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8B17FD781176580D00E7A908 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BA0DB451166502000839F5C /* Package Plugins */;
+			targetProxy = 8B17FD771176580D00E7A908 /* PBXContainerItemProxy */;
+		};
 		8BA0DB1D11664F1700839F5C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "YubNub-QSB";
@@ -502,6 +542,27 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		8B17FD751176580A00E7A908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Upload Plugins";
+			};
+			name = Debug;
+		};
+		8B17FD761176580A00E7A908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Upload Plugins";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		8BA0DB461166502000839F5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -526,14 +587,14 @@
 		8BC02A0310F3BBB80029CDA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				QSB_VERSION = 3283;
+				QSB_VERSION = 3328;
 			};
 			name = Debug;
 		};
 		8BC02A0410F3BBB80029CDA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				QSB_VERSION = 3283;
+				QSB_VERSION = 3328;
 			};
 			name = Release;
 		};
@@ -554,6 +615,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8B17FD7B1176581A00E7A908 /* Build configuration list for PBXAggregateTarget "Upload Plugins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B17FD751176580A00E7A908 /* Debug */,
+				8B17FD761176580A00E7A908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8BA0DB4A1166504200839F5C /* Build configuration list for PBXAggregateTarget "Package Plugins" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

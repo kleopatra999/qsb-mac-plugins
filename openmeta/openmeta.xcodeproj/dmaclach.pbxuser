@@ -45,7 +45,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					341,
+					553,
 					20,
 					48,
 					43,
@@ -67,7 +67,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					301,
+					454,
 					60,
 					20,
 					48,
@@ -87,6 +87,16 @@
 			PBXPerProjectTemplateStateSaveDate = 292373803;
 			PBXWorkspaceStateSaveDate = 292373803;
 		};
+		perUserProjectItems = {
+			8B39F10C116D8BAB00D9743F /* PBXBookmark */ = 8B39F10C116D8BAB00D9743F /* PBXBookmark */;
+			8B39F140116D976000D9743F /* PBXTextBookmark */ = 8B39F140116D976000D9743F /* PBXTextBookmark */;
+			8B39F15F116D9BDD00D9743F /* PBXTextBookmark */ = 8B39F15F116D9BDD00D9743F /* PBXTextBookmark */;
+			8B39F160116D9BDD00D9743F /* PBXTextBookmark */ = 8B39F160116D9BDD00D9743F /* PBXTextBookmark */;
+			8B39F161116D9BDD00D9743F /* PBXTextBookmark */ = 8B39F161116D9BDD00D9743F /* PBXTextBookmark */;
+			8B39F167116D9CDB00D9743F /* PBXTextBookmark */ = 8B39F167116D9CDB00D9743F /* PBXTextBookmark */;
+			8B39F168116D9CDB00D9743F /* PBXTextBookmark */ = 8B39F168116D9CDB00D9743F /* PBXTextBookmark */;
+			8B39F16A116D9CDB00D9743F /* PlistBookmark */ = 8B39F16A116D9CDB00D9743F /* PlistBookmark */;
+		};
 		sourceControlManager = 7F80FAA30F68E61D00228142 /* Source Control */;
 		userBuildSettings = {
 		};
@@ -97,6 +107,14 @@
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 1399}";
 			sepNavWindowFrame = "{{84, 299}, {983, 1211}}";
+		};
+	};
+	7F38DCE20F6864D90051B7E3 /* openmetaAction.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1045, 1750}}";
+			sepNavSelRange = "{1768, 0}";
+			sepNavVisRange = "{0, 1288}";
+			sepNavWindowFrame = "{{751, 75}, {1104, 803}}";
 		};
 	};
 	7F80FAA30F68E61D00228142 /* Source Control */ = {
@@ -156,12 +174,158 @@
 		path = "Quick Search Box.app";
 		sourceTree = QSBBUILDROOT;
 	};
+	8B39F0A9116D47D200D9743F /* OpenMeta.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1152, 3360}}";
+			sepNavSelRange = "{9656, 11}";
+			sepNavVisRange = "{8313, 2595}";
+			sepNavWindowFrame = "{{15, 75}, {1104, 803}}";
+		};
+	};
+	8B39F0AA116D47D200D9743F /* OpenMeta.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1194, 13244}}";
+			sepNavSelRange = "{32583, 43}";
+			sepNavVisRange = "{29684, 2388}";
+			sepNavWindowFrame = "{{15, 75}, {1104, 803}}";
+		};
+	};
+	8B39F0FA116D669500D9743F /* OpenMetaBackup.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1524, 29666}}";
+			sepNavSelRange = "{39143, 21}";
+			sepNavVisRange = "{38167, 2703}";
+			sepNavWindowFrame = "{{15, 75}, {1104, 803}}";
+		};
+	};
+	8B39F0FF116D679600D9743F /* OpenMetaPrefs.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1062, 431}}";
+			sepNavSelRange = "{619, 21}";
+			sepNavVisRange = "{0, 1000}";
+		};
+	};
+	8B39F100116D679600D9743F /* OpenMetaPrefs.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1074, 2058}}";
+			sepNavSelRange = "{2165, 7}";
+			sepNavVisRange = "{1975, 1242}";
+		};
+	};
+	8B39F10C116D8BAB00D9743F /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8D5B49B7048680CD000E48DA /* Info.plist */;
+	};
+	8B39F138116D976000D9743F /* OpenMetaPrefs.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = OpenMetaPrefs.h;
+		path = "/Users/dmaclach/src/opensource/qsb-mac-plugins/openmeta/externals/openmeta/OpenMetaPrefs.h";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1062, 431}}";
+			sepNavSelRange = "{619, 21}";
+			sepNavVisRange = "{0, 1000}";
+			sepNavWindowFrame = "{{15, 75}, {1104, 803}}";
+		};
+	};
+	8B39F140116D976000D9743F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8B39F141116D976000D9743F /* HGSActionArgument.h */;
+		rLen = 1;
+		rLoc = 118;
+		rType = 1;
+	};
+	8B39F141116D976000D9743F /* HGSActionArgument.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = HGSActionArgument.h;
+		path = /Users/dmaclach/src3/googlemac/QuickSearchBox/QSB/build/Debug/Vermilion.framework/Versions/A/Headers/HGSActionArgument.h;
+		sourceTree = "<absolute>";
+	};
+	8B39F15F116D9BDD00D9743F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8B39F100116D679600D9743F /* OpenMetaPrefs.m */;
+		name = "OpenMetaPrefs.m: 61";
+		rLen = 7;
+		rLoc = 2165;
+		rType = 0;
+		vrLen = 1242;
+		vrLoc = 1975;
+	};
+	8B39F160116D9BDD00D9743F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8B39F138116D976000D9743F /* OpenMetaPrefs.h */;
+		name = "OpenMetaPrefs.h: 20";
+		rLen = 21;
+		rLoc = 619;
+		rType = 0;
+		vrLen = 1000;
+		vrLoc = 0;
+	};
+	8B39F161116D9BDD00D9743F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8B39F100116D679600D9743F /* OpenMetaPrefs.m */;
+		name = "OpenMetaPrefs.m: 61";
+		rLen = 7;
+		rLoc = 2165;
+		rType = 0;
+		vrLen = 1242;
+		vrLoc = 1975;
+	};
+	8B39F167116D9CDB00D9743F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8B39F0FF116D679600D9743F /* OpenMetaPrefs.h */;
+		name = "OpenMetaPrefs.h: 20";
+		rLen = 21;
+		rLoc = 619;
+		rType = 0;
+		vrLen = 1000;
+		vrLoc = 0;
+	};
+	8B39F168116D9CDB00D9743F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8B39F169116D9CDB00D9743F /* HGSActionArgument.h */;
+		name = "HGSActionArgument.h: 119";
+		rLen = 48;
+		rLoc = 4120;
+		rType = 0;
+		vrLen = 1481;
+		vrLoc = 2788;
+	};
+	8B39F169116D9CDB00D9743F /* HGSActionArgument.h */ = {
+		isa = PBXFileReference;
+		name = HGSActionArgument.h;
+		path = /Users/dmaclach/src3/googlemac/QuickSearchBox/QSB/build/Debug/Vermilion.framework/Versions/A/Headers/HGSActionArgument.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1045, 2926}}";
+			sepNavSelRange = "{4120, 48}";
+			sepNavVisRange = "{2788, 1481}";
+			sepNavWindowFrame = "{{15, 75}, {1104, 803}}";
+		};
+	};
+	8B39F16A116D9CDB00D9743F /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D5B49B7048680CD000E48DA /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			HGSExtensions,
+			2,
+			HGSActionArguments,
+			HGSActionArgumentClass,
+		);
+		name = "/Users/dmaclach/src/opensource/qsb-mac-plugins/openmeta/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
 	8D5B49AC048680CD000E48DA /* openmeta */ = {
 		activeExec = 0;
 	};
 	8D5B49B7048680CD000E48DA /* Info.plist */ = {
 		uiCtxt = {
-			sepNavWindowFrame = "{{19, 0}, {927, 873}}";
+			sepNavWindowFrame = "{{19, 75}, {927, 803}}";
 		};
 	};
 }
