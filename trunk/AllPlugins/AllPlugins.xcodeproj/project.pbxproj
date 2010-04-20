@@ -47,6 +47,7 @@
 				8BC8A572115DCE2F00A6E783 /* PBXTargetDependency */,
 				8BA0DB1D11664F1700839F5C /* PBXTargetDependency */,
 				8BA0DB4111664FE200839F5C /* PBXTargetDependency */,
+				D48541B21166A0AA00D7B155 /* PBXTargetDependency */,
 			);
 			name = AllPlugins;
 			productName = AllPlugins;
@@ -206,6 +207,20 @@
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = KeychainItems;
 		};
+		D48541AF1166A08900D7B155 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D48541A81166A08900D7B155 /* FastScripts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* FastScripts.hgs */;
+			remoteInfo = FastScripts;
+		};
+		D48541B11166A0AA00D7B155 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D48541A81166A08900D7B155 /* FastScripts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* FastScripts */;
+			remoteInfo = FastScripts;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -240,6 +255,7 @@
 		8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StockQuoter.xcodeproj; path = "../stock-quoter/trunk/StockQuoter.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Twitter.xcodeproj; path = ../twitter/trunk/Twitter.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainItems.xcodeproj; path = ../keychainitems/trunk/KeychainItems.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D48541A81166A08900D7B155 /* FastScripts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FastScripts.xcodeproj; path = ../FastScripts/trunk/FastScripts.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -288,6 +304,7 @@
 				8BA918DA1129BE75004A431F /* Rot13.xcodeproj */,
 				8BA918D11129BE69004A431F /* Delicious.xcodeproj */,
 				8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */,
+				D48541A81166A08900D7B155 /* FastScripts.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -331,6 +348,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D48541A91166A08900D7B155 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D48541B01166A08900D7B155 /* FastScripts.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXProject section */
@@ -345,6 +370,10 @@
 				{
 					ProductGroup = 8BA918D21129BE69004A431F /* Products */;
 					ProjectRef = 8BA918D11129BE69004A431F /* Delicious.xcodeproj */;
+				},
+				{
+					ProductGroup = D48541A91166A08900D7B155 /* Products */;
+					ProjectRef = D48541A81166A08900D7B155 /* FastScripts.xcodeproj */;
 				},
 				{
 					ProductGroup = 8BC8A569115DCE0B00A6E783 /* Products */;
@@ -452,6 +481,13 @@
 			remoteRef = 8BC8A56F115DCE0B00A6E783 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		D48541B01166A08900D7B155 /* FastScripts.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FastScripts.hgs;
+			remoteRef = D48541AF1166A08900D7B155 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -538,6 +574,11 @@
 			isa = PBXTargetDependency;
 			name = KeychainItems;
 			targetProxy = 8BC8A571115DCE2F00A6E783 /* PBXContainerItemProxy */;
+		};
+		D48541B21166A0AA00D7B155 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FastScripts;
+			targetProxy = D48541B11166A0AA00D7B155 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
