@@ -48,6 +48,7 @@
 				8BA0DB1D11664F1700839F5C /* PBXTargetDependency */,
 				8BA0DB4111664FE200839F5C /* PBXTargetDependency */,
 				D48541B21166A0AA00D7B155 /* PBXTargetDependency */,
+				C9A69CA911D7FA370062706D /* PBXTargetDependency */,
 			);
 			name = AllPlugins;
 			productName = AllPlugins;
@@ -64,6 +65,7 @@
 		8BA0DB1011664EFD00839F5C /* Delicious.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA918D91129BE69004A431F /* Delicious.hgs */; };
 		8BA0DB1B11664F1100839F5C /* YubNub-QSB.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA0DB1A11664F0D00839F5C /* YubNub-QSB.hgs */; };
 		8BA0DB4211664FEC00839F5C /* Send_To_THL.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA0DB3F11664FD900839F5C /* Send_To_THL.hgs */; };
+		C9A69CA711D7FA050062706D /* WAlpha.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9A69CA411D7F9F60062706D /* WAlpha.hgs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +73,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BC02A0210F3BBB80029CDA1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8BA0DB451166502000839F5C /* Package Plugins */;
+			remoteGlobalIDString = 8BA0DB451166502000839F5C;
 			remoteInfo = "Package Plugins";
 		};
 		8BA0DB1911664F0D00839F5C /* PBXContainerItemProxy */ = {
@@ -207,18 +209,32 @@
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = KeychainItems;
 		};
+		C9A69CA311D7F9F60062706D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9A69C9C11D7F9F60062706D /* WAlpha.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* WAlpha.hgs */;
+			remoteInfo = WAlpha;
+		};
+		C9A69CA811D7FA370062706D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9A69C9C11D7F9F60062706D /* WAlpha.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* WAlpha */;
+			remoteInfo = WAlpha;
+		};
 		D48541AF1166A08900D7B155 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D48541A81166A08900D7B155 /* FastScripts.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* FastScripts.hgs */;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = FastScripts;
 		};
 		D48541B11166A0AA00D7B155 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D48541A81166A08900D7B155 /* FastScripts.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* FastScripts */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = FastScripts;
 		};
 /* End PBXContainerItemProxy section */
@@ -239,6 +255,7 @@
 				8BA0DB0D11664EEA00839F5C /* StockQuoter.hgs in CopyFiles */,
 				8BA0DB0C11664EE700839F5C /* Send_To_RTM.hgs in CopyFiles */,
 				8BA0DB1B11664F1100839F5C /* YubNub-QSB.hgs in CopyFiles */,
+				C9A69CA711D7FA050062706D /* WAlpha.hgs in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +272,7 @@
 		8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StockQuoter.xcodeproj; path = "../stock-quoter/trunk/StockQuoter.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Twitter.xcodeproj; path = ../twitter/trunk/Twitter.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainItems.xcodeproj; path = ../keychainitems/trunk/KeychainItems.xcodeproj; sourceTree = SOURCE_ROOT; };
+		C9A69C9C11D7F9F60062706D /* WAlpha.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WAlpha.xcodeproj; path = ../WAlpha/WAlpha.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D48541A81166A08900D7B155 /* FastScripts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FastScripts.xcodeproj; path = ../FastScripts/trunk/FastScripts.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -302,6 +320,7 @@
 				8BC02A1C10F3BBD60029CDA1 /* StockQuoter.xcodeproj */,
 				8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */,
 				8BA918DA1129BE75004A431F /* Rot13.xcodeproj */,
+				C9A69C9C11D7F9F60062706D /* WAlpha.xcodeproj */,
 				8BA918D11129BE69004A431F /* Delicious.xcodeproj */,
 				8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */,
 				D48541A81166A08900D7B155 /* FastScripts.xcodeproj */,
@@ -344,6 +363,14 @@
 			isa = PBXGroup;
 			children = (
 				8BC8A570115DCE0B00A6E783 /* KeychainItems.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9A69C9D11D7F9F60062706D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9A69CA411D7F9F60062706D /* WAlpha.hgs */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -402,6 +429,10 @@
 				{
 					ProductGroup = 8BC02A2610F3BBE30029CDA1 /* Products */;
 					ProjectRef = 8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */;
+				},
+				{
+					ProductGroup = C9A69C9D11D7F9F60062706D /* Products */;
+					ProjectRef = C9A69C9C11D7F9F60062706D /* WAlpha.xcodeproj */;
 				},
 				{
 					ProductGroup = 8BA0DB1311664F0D00839F5C /* Products */;
@@ -479,6 +510,13 @@
 			fileType = wrapper.cfbundle;
 			path = KeychainItems.hgs;
 			remoteRef = 8BC8A56F115DCE0B00A6E783 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C9A69CA411D7F9F60062706D /* WAlpha.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WAlpha.hgs;
+			remoteRef = C9A69CA311D7F9F60062706D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		D48541B01166A08900D7B155 /* FastScripts.hgs */ = {
@@ -574,6 +612,11 @@
 			isa = PBXTargetDependency;
 			name = KeychainItems;
 			targetProxy = 8BC8A571115DCE2F00A6E783 /* PBXContainerItemProxy */;
+		};
+		C9A69CA911D7FA370062706D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WAlpha;
+			targetProxy = C9A69CA811D7FA370062706D /* PBXContainerItemProxy */;
 		};
 		D48541B21166A0AA00D7B155 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
