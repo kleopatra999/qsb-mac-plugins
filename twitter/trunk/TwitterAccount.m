@@ -61,6 +61,15 @@ static const NSTimeInterval kAuthenticationTimeOutInterval = 15.0;
 // Open twitter.com in the user's preferred browser.
 + (BOOL)openTwitterHomePage;
 
+- (void)authSetFetcher:(GDataHTTPFetcher *)fetcher
+      finishedWithData:(NSData *)data;
+- (void)authSetFetcher:(GDataHTTPFetcher *)fetcher
+       failedWithError:(NSError *)error;
+- (void)authFetcher:(GDataHTTPFetcher *)fetcher
+   finishedWithData:(NSData *)data;
+- (void)authFetcher:(GDataHTTPFetcher *)fetcher
+    failedWithError:(NSError *)error;
+
 @property (nonatomic, assign) BOOL authCompleted;
 @property (nonatomic, assign) BOOL authSucceeded;
 

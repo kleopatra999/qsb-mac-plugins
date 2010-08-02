@@ -91,13 +91,13 @@ static OSStatus KeychainModified(SecKeychainEvent keychainEvent,
 
     // build the initial index
     [self updateIndex];
-    
+
     // register a callback for when the keychain is modified
     OSStatus result = SecKeychainAddCallback(KeychainModified,
                                              kSecAddEventMask
-                                             | kSecDeleteEventMask 
-                                             | kSecUpdateEventMask 
-                                             | kSecDefaultChangedEventMask 
+                                             | kSecDeleteEventMask
+                                             | kSecUpdateEventMask
+                                             | kSecDefaultChangedEventMask
                                              | kSecKeychainListChangedMask,
                                              self);
     if (result != noErr) {
@@ -121,21 +121,22 @@ static OSStatus KeychainModified(SecKeychainEvent keychainEvent,
   [super dealloc];
 }
 
-- (void)searchSecurityClass:(SecItemClass)targetClass {
+- (void)searchSecurityClass:(SecItemClass)targetClass
+                   database:(HGSMemorySearchSourceDB *)database {
   SecKeychainSearchRef searchRef;
   OSStatus result = SecKeychainSearchCreateFromAttributes(NULL, targetClass, NULL, &searchRef);
   if (result != noErr) {
     HGSLog(@"KeychainItemsSource: error %d while starting search", result);
     return;
   }
-  
+
   SecKeychainItemRef itemRef;
   while ((result = SecKeychainSearchCopyNext(searchRef, &itemRef)) == noErr) {
-    
+
     // create an indexable result for the item and index it
     HGSResult* newResult = [self resultForItem:itemRef ofClass:targetClass];
     if (newResult) {
-      [self indexResult:newResult];
+      [database indexResult:newResult];
     }
 
     CFRelease(itemRef);
@@ -143,15 +144,16 @@ static OSStatus KeychainModified(SecKeychainEvent keychainEvent,
   if (result != errSecItemNotFound) {
     HGSLog(@"KeychainItemsSource: error %d while iterating through search results", result);
   }
-  
+
   CFRelease(searchRef);
 }
 
 - (void)updateIndex {
   HGSLogDebug(@"updating index");
-  [self clearResultIndex];
-  [self searchSecurityClass:kSecInternetPasswordItemClass];
-  [self searchSecurityClass:kSecGenericPasswordItemClass];
+  HGSMemorySearchSourceDB *database = [HGSMemorySearchSourceDB database];
+  [self searchSecurityClass:kSecInternetPasswordItemClass database:database];
+  [self searchSecurityClass:kSecGenericPasswordItemClass database:database];
+  [self replaceCurrentDatabaseWith:database];
 }
 
 @end

@@ -39,8 +39,8 @@
 @implementation NetworkLocationSource
 
 - (void)updateCache {
-  [self clearResultIndex];
-  SCPreferencesRef prefs 
+  HGSMemorySearchSourceDB *db = [HGSMemorySearchSourceDB database];
+  SCPreferencesRef prefs
     = SCPreferencesCreate(NULL, CFSTR("SystemConfiguration"), NULL);
   NSArray *array = (NSArray *)SCNetworkSetCopyAll(prefs);
   for (id item in array) {
@@ -49,14 +49,15 @@
     name = [NSString stringWithFormat:@"%@ Network Location", name];
     NSString *urlString = [NSString stringWithFormat:@"qsb-netloc:%@", key];
     NSURL *url = [NSURL URLWithString:urlString];
-    HGSUnscoredResult *newObject 
+    HGSUnscoredResult *newObject
       = [HGSUnscoredResult resultWithURL:url
                                     name:name
                                     type:@"other.networklocation"
                                   source:self
                               attributes:nil];
-    [self indexResult:newObject name:name otherTerm:nil];
+    [db indexResult:newObject name:name otherTerm:nil];
   }
+  [self replaceCurrentDatabaseWith:db];
   CFRelease(array);
   CFRelease(prefs);
 }
@@ -75,7 +76,7 @@
     value = [NSImage imageNamed:NSImageNameNetwork];
   } else if ([key isEqualToString:kHGSObjectAttributeDefaultActionKey]) {
     HGSExtensionPoint *actionPoint = [HGSExtensionPoint actionsPoint];
-    value = [actionPoint extensionWithIdentifier:@"com.blacktree.qsb.action.SetNetworkLocation"];      
+    value = [actionPoint extensionWithIdentifier:@"com.blacktree.qsb.action.SetNetworkLocation"];
   }
   return value;
 }
@@ -97,20 +98,20 @@
       = [NSTask launchedTaskWithLaunchPath:@"/usr/sbin/scselect"
                                  arguments:[NSArray arrayWithObject:location]];
     [setNetTask waitUntilExit];
-    
+
     NSDictionary *messageDict
       = [NSDictionary dictionaryWithObjectsAndKeys:
          [NSString stringWithFormat:@"Switched to %@", [object displayName]],
          kHGSSummaryMessageKey,
-         [NSImage imageNamed:NSImageNameNetwork], 
+         [NSImage imageNamed:NSImageNameNetwork],
          kHGSImageMessageKey,
          nil];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc postNotificationName:kHGSUserMessageNotification 
+    [nc postNotificationName:kHGSUserMessageNotification
                       object:self
                     userInfo:messageDict];
   }
-  
+
   // TODO(alcor): this format is probably more robust, but isn't working
   //    SCPreferencesRef prefs = SCPreferencesCreate(NULL, CFSTR("SystemConfiguration"), NULL);
   //    NSArray *array = (NSArray *)SCNetworkSetCopyAll(prefs);
@@ -126,7 +127,7 @@
   //    }
   //    CFRelease(array);
   //    CFRelease(prefs);
-  
+
   return success;
 }
 @end

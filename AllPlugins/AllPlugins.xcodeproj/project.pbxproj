@@ -56,6 +56,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		8B2AB5AE1204C67D00C84242 /* FastScripts.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = D48541B01166A08900D7B155 /* FastScripts.hgs */; };
 		8BA0DB0911664EDE00839F5C /* KeychainItems.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC8A570115DCE0B00A6E783 /* KeychainItems.hgs */; };
 		8BA0DB0B11664EE500839F5C /* NetworkLocation.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A1210F3BBC80029CDA1 /* NetworkLocation.hgs */; };
 		8BA0DB0C11664EE700839F5C /* Send_To_RTM.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A1B10F3BBCE0029CDA1 /* Send_To_RTM.hgs */; };
@@ -213,14 +214,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = C9A69C9C11D7F9F60062706D /* WAlpha.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* WAlpha.hgs */;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = WAlpha;
 		};
 		C9A69CA811D7FA370062706D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9A69C9C11D7F9F60062706D /* WAlpha.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* WAlpha */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = WAlpha;
 		};
 		D48541AF1166A08900D7B155 /* PBXContainerItemProxy */ = {
@@ -246,6 +247,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				8B2AB5AE1204C67D00C84242 /* FastScripts.hgs in CopyFiles */,
 				8BA0DB4211664FEC00839F5C /* Send_To_THL.hgs in CopyFiles */,
 				8BA0DB0911664EDE00839F5C /* KeychainItems.hgs in CopyFiles */,
 				8BA0DB1011664EFD00839F5C /* Delicious.hgs in CopyFiles */,
@@ -540,7 +542,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# You must set GOOGLE_CODE_USER to your Google code user name\n# and GOOGLE_CODE_PASSWORD to your Google code password (not your email password, but your actual code password)\n\nset -o errexit\nset -o nounset\nset -o verbose\n\n# Must keep these arrays in order. No 2-D arrays in bash.\nPLUGINS=( \"Delicious\"\n          \"Twitter\"\n          \"StockQuoter\"\n          \"Send_To_THL\"\n          \"Send_To_RTM\"\n          \"Rot13\"\n          \"KeychainItems\"\n          \"YubNub-QSB\"\n          \"NetworkLocation\" )\nDESCRIPTIONS=( \"Search your delicious bookmarks. (http://delicious.com/)\"\n               \"Post to twitter. (http://twitter.com)\"\n               \"Search for stock information and display directly in QSB.\"\n               \"Send a note to The Hit List. (http://www.potionfactory.com/thehitlist/)\"\n               \"Send a note to Remember The Milk. (http://www.rememberthemilk.com)\"\n               \"Rot 13 encode text. (http://en.wikipedia.org/wiki/ROT13)\"\n               \"Search your keychain.\"\n               \"Search yubnub. (http://yubnub.org/)\"\n               \"Search your network locations.\" )\n\nindex=0\nfor PLUGIN in \"${PLUGINS[@]}\"; do\n\t\"${SRCROOT}/googlecode_upload.py\" -p qsb-mac-plugins -s \"${DESCRIPTIONS[$index]}\" -u $GOOGLE_CODE_USER -w $GOOGLE_CODE_PASSWORD -l Featured,Type-Archive,OpSys-OSX \"${BUILT_PRODUCTS_DIR}/${PLUGIN}.hgs.${QSB_VERSION}.zip\"\n\tlet \"index = $index + 1\"\ndone";
+			shellScript = "# You must set GOOGLE_CODE_USER to your Google code user name\n# and GOOGLE_CODE_PASSWORD to your Google code password (not your email password, but your actual code password)\n\nset -o errexit\nset -o nounset\nset -o verbose\n\n# Must keep these arrays in order. No 2-D arrays in bash.\nPLUGINS=( \"Delicious\"\n          \"Twitter\"\n          \"StockQuoter\"\n          \"Send_To_THL\"\n          \"Send_To_RTM\"\n          \"Rot13\"\n          \"KeychainItems\"\n          \"YubNub-QSB\"\n          \"NetworkLocation\"\n          \"FastScripts\"\n\t\t \"WAlpha\" )\nDESCRIPTIONS=( \"Search your delicious bookmarks. (http://delicious.com/)\"\n               \"Post to twitter. (http://twitter.com)\"\n               \"Search for stock information and display directly in QSB.\"\n               \"Send a note to The Hit List. (http://www.potionfactory.com/thehitlist/)\"\n               \"Send a note to Remember The Milk. (http://www.rememberthemilk.com)\"\n               \"Rot 13 encode text. (http://en.wikipedia.org/wiki/ROT13)\"\n               \"Search your keychain.\"\n               \"Search yubnub. (http://yubnub.org/)\"\n               \"Search your network locations.\" \n               \"Search and execute your FastScripts.\"\n               \"Search Wolfram Alpha.\")\n\nindex=0\nfor PLUGIN in \"${PLUGINS[@]}\"; do\n\t\"${SRCROOT}/googlecode_upload.py\" -p qsb-mac-plugins -s \"${DESCRIPTIONS[$index]}\" -u $GOOGLE_CODE_USER -w $GOOGLE_CODE_PASSWORD -l Featured,Type-Archive,OpSys-OSX \"${BUILT_PRODUCTS_DIR}/${PLUGIN}.hgs.${QSB_VERSION}.zip\"\n\tlet \"index = $index + 1\"\ndone";
 		};
 		8BA0DB6611665EED00839F5C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -629,9 +631,6 @@
 		8B17FD751176580A00E7A908 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = "Upload Plugins";
 			};
 			name = Debug;
@@ -639,20 +638,13 @@
 		8B17FD761176580A00E7A908 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Upload Plugins";
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
 		8BA0DB461166502000839F5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = "Package Plugins";
 			};
 			name = Debug;
@@ -660,25 +652,21 @@
 		8BA0DB471166502000839F5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Package Plugins";
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
 		8BC02A0310F3BBB80029CDA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				QSB_VERSION = 3328;
+				QSB_VERSION = 3767;
 			};
 			name = Debug;
 		};
 		8BC02A0410F3BBB80029CDA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				QSB_VERSION = 3328;
+				QSB_VERSION = 3767;
 			};
 			name = Release;
 		};

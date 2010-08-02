@@ -55,7 +55,11 @@ static NSString *const kSendStatusFormat
 // success or failure.
 - (void)informUserWithDescription:(NSString *)description
                       successCode:(NSInteger)successCode;
-
+- (void)loginCredentialsChanged:(NSNotification *)notification ;
+- (void)tweetFetcher:(GDataHTTPFetcher *)fetcher
+    finishedWithData:(NSData *)data;
+- (void)tweetFetcher:(GDataHTTPFetcher *)fetcher
+     failedWithError:(NSError *)error;
 @end
 
 
@@ -104,7 +108,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
 
 - (void)sendTwitterStatus:(NSString *)twitterMessage {
   if (twitterMessage) {
-    HGSKeychainItem* keychainItem 
+    HGSKeychainItem* keychainItem
       = [HGSKeychainItem keychainItemForService:[account_ identifier]
                                        username:nil];
     NSString *username = [keychainItem username];
@@ -112,14 +116,14 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
     if (username && password) {
       if ([twitterMessage length] > 140) {
         NSString *warningString
-          = HGSLocalizedString(@"Message too long - truncated.", 
+          = HGSLocalizedString(@"Message too long - truncated.",
                                @"A dialog label explaining that their Twitter "
                                @"message was too long and was truncated");
         [self informUserWithDescription:warningString
                             successCode:kHGSUserMessageWarningType];
         twitterMessage = [twitterMessage substringToIndex:140];
       }
-      
+
       NSString *encodedMessage
         = [twitterMessage gtm_stringByEscapingForURLArgument];
       NSString *encodedMessageBody
@@ -127,12 +131,12 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
       NSString *sendStatusString = [NSString stringWithFormat:kSendStatusFormat,
                                     encodedMessage];
       NSURL *sendStatusURL = [NSURL URLWithString:sendStatusString];
-      
+
       // Construct an NSMutableURLRequest for the URL and set appropriate
       // request method.
       NSMutableURLRequest *sendStatusRequest
-        = [NSMutableURLRequest requestWithURL:sendStatusURL 
-                                  cachePolicy:NSURLRequestReloadIgnoringCacheData 
+        = [NSMutableURLRequest requestWithURL:sendStatusURL
+                                  cachePolicy:NSURLRequestReloadIgnoringCacheData
                               timeoutInterval:15.0];
       [sendStatusRequest setHTTPMethod:@"POST"];
       [sendStatusRequest setHTTPShouldHandleCookies:NO];
@@ -142,7 +146,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
                forHTTPHeaderField:@"X-Twitter-Client-Version"];
       [sendStatusRequest setValue:@"http://www.google.com/qsb-mac"
                forHTTPHeaderField:@"X-Twitter-Client-URL"];
-      
+
       // Set request body, if specified (hopefully so), with 'source'
       // parameter if appropriate.
       NSData *bodyData
@@ -166,7 +170,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
     } else {
       NSString *errorString
         = HGSLocalizedString(@"Could not tweet. Please check the password for "
-                             @"account %@", 
+                             @"account %@",
                              @"A dialog label explaining that the user could "
                              @"not send their Twitter data due to a bad "
                              @"password for account %@");
@@ -191,7 +195,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
                         successCode:kHGSUserMessageNoteType];
   } else {
     NSString *errorFormat
-      = HGSLocalizedString(@"Could not tweet! (%d)", 
+      = HGSLocalizedString(@"Could not tweet! (%d)",
                            @"A dialog label explaining to the user that we could "
                            @"not tweet. %d is an status code.");
     NSString *errorString = [NSString stringWithFormat:errorFormat, statusCode];
@@ -205,7 +209,7 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
 - (void)tweetFetcher:(GDataHTTPFetcher *)fetcher
      failedWithError:(NSError *)error {
   NSString *errorFormat
-    = HGSLocalizedString(@"Could not tweet! (%d)", 
+    = HGSLocalizedString(@"Could not tweet! (%d)",
                          @"A dialog label explaining to the user that we could "
                          @"not tweet. %d is an error code.");
   NSString *errorString = [NSString stringWithFormat:errorFormat,
@@ -223,14 +227,14 @@ GTM_METHOD_CHECK(NSString, gtm_stringByEscapingForURLArgument);
   NSString *path = [bundle pathForResource:@"Twitter" ofType:@"icns"];
   NSImage *twitterT
     = [[[NSImage alloc] initByReferencingFile:path] autorelease];
-  NSString *summary 
-    = HGSLocalizedString(@"Twitter", 
+  NSString *summary
+    = HGSLocalizedString(@"Twitter",
                          @"A dialog title. Twitter is a product name");
   HGSUserMessenger *messenger = [HGSUserMessenger sharedUserMessenger];
-  [messenger displayUserMessage:summary 
-                    description:description 
+  [messenger displayUserMessage:summary
+                    description:description
                            name:@"TwitterPluginMessage"
-                          image:twitterT 
+                          image:twitterT
                            type:successCode];
 }
 

@@ -10,7 +10,6 @@
 #import <GData/GData.h>
 #import <Vermilion/Vermilion.h>
 #import <Vermilion/HGSPython.h>  // Must preceed import of <Python/structmember.h>.
-#import <Python/structmember.h>
 #import <GTM/GTMGoogleSearch.h>
 #import <GTM/GTMMethodCheck.h>
 #import <GTM/GTMNSScanner+JSON.h>
@@ -49,7 +48,15 @@ static NSString *const kGoogleFinanceAfterHoursChangePercentageKey = @"ecp";
 
 - (void)fetchStockDataForSymbol:(NSString *)symbol;
 - (void)fetchStockChartForSymbol:(NSString *)symbol;
-
+- (void)dataFetcher:(GDataHTTPFetcher *)fetcher
+   finishedWithData:(NSData *)retrievedData;
+- (void)dataFetcher:(GDataHTTPFetcher *)fetcher
+    failedWithError:(NSError *)error;
+- (void)chartFetcher:(GDataHTTPFetcher *)fetcher
+    finishedWithData:(NSData *)retrievedData;
+- (void)chartFetcher:(GDataHTTPFetcher *)fetcher
+     failedWithError:(NSError *)error;
+- (void)updateChartWithData:(NSData *)chartData;
 @end
 
 
@@ -61,7 +68,7 @@ static NSString *const kGoogleFinanceAfterHoursChangePercentageKey = @"ecp";
 
 @end
 
-  
+
 @interface NSString (StockQuoterStringMethods)
 
 // Convert all instances of '\xnn' into the character with that hex value
@@ -114,7 +121,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
 - (NSNumber *)setResult:(HGSResult *)result {
   [result_ autorelease];
   result_ = [result retain];
-  
+
   BOOL useCustomView = NO;
   // Determine the stock symbol from the result's URL.  It'll always be
   // the last portion of the string following the last '='.
@@ -126,7 +133,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
     if ([symbol length]) {
       // Fetch the various stock quote components.
       [self fetchStockDataForSymbol:symbol];
-      
+
       // Fetch an image for the graph.
       [self fetchStockChartForSymbol:symbol];
       useCustomView = YES;
@@ -145,8 +152,8 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
   NSMutableDictionary *args
     = [NSMutableDictionary dictionaryWithObject:@"infoquoteall"
                                          forKey:@"infotype"];
-  NSString *dataURLString = [googleSearch searchURLFor:symbol 
-                                                ofType:@"finance/info" 
+  NSString *dataURLString = [googleSearch searchURLFor:symbol
+                                                ofType:@"finance/info"
                                              arguments:args];
   NSURL *dataURL = [NSURL URLWithString:dataURLString];
   NSURLRequest *request = [NSURLRequest requestWithURL:dataURL];
@@ -181,7 +188,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
     // Collect all quote information and determine if we have enough.
     NSString *nameString = [stockData objectForKey:kGoogleFinanceCompanyNameKey];
     NSString *symbolString = [stockData objectForKey:kGoogleFinanceSymbolKey];
-    NSString *openMarketPriceString 
+    NSString *openMarketPriceString
       = [stockData objectForKey:kGoogleFinanceOpenMarketPriceKey];
     NSString *openMarketChangeString
       = [stockData objectForKey:kGoogleFinanceOpenMarketChangeKey];
@@ -193,7 +200,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
     NSString *exchangeOpenString
       = [stockData objectForKey:kGoogleFinanceExchangeOpenKey];
     BOOL afterHours = [exchangeOpenString isEqualToString:@"0"];
-    
+
     // Make the company name bold with the symbol regular.
     NSFont *boldSystem18Font = [NSFont boldSystemFontOfSize:18.0];
     NSDictionary *companyNameAttr
@@ -214,7 +221,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
       = [[[NSAttributedString alloc] initWithString:nameSymbolString
                                          attributes:symbolAttr] autorelease];
     [nameAttrString appendAttributedString:symbolAttrString];
-    NSMutableParagraphStyle *lineBreakStyle 
+    NSMutableParagraphStyle *lineBreakStyle
       = [[[NSParagraphStyle defaultParagraphStyle] mutableCopy] autorelease];
     [lineBreakStyle setLineBreakMode:NSLineBreakByTruncatingMiddle];
     NSRange fullRange = NSMakeRange(0, [nameAttrString length]);
@@ -225,7 +232,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
 
     CGFloat openMarketPrice = [openMarketPriceString currencyStringFloatValue];
     [self setOpenMarketPrice:openMarketPrice];
-    
+
     openMarketChangeString
       = [openMarketChangeString stringByAppendingFormat:@" (%@%%)",
          openMarketChangePercentageString];
@@ -237,12 +244,12 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
     } else {
       [self setOpenMarketChangeColor:[NSColor blackColor]];
     }
-    
+
     CGFloat highPrice = [highPriceString currencyStringFloatValue];
     [self setHighPrice:highPrice];
     CGFloat lowPrice = [lowPriceString currencyStringFloatValue];
     [self setLowPrice:lowPrice];
-    
+
     if (afterHours) {
       NSString *afterHoursPriceString
         = [stockData objectForKey:kGoogleFinanceAfterHoursPriceKey];
@@ -252,7 +259,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
         = [stockData objectForKey:kGoogleFinanceAfterHoursChangePercentageKey];
       CGFloat afterHoursPrice = [afterHoursPriceString currencyStringFloatValue];
       [self setAfterHoursPrice:afterHoursPrice];
-      
+
       if ([afterHoursChangeString length]
           && [afterHoursChangePercentageString length]) {
         afterHoursChangeString
@@ -287,8 +294,8 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
 
 - (void)fetchStockChartForSymbol:(NSString *)symbol {
   GTMGoogleSearch *googleSearch = [GTMGoogleSearch sharedInstance];
-  NSString *chartURLString = [googleSearch searchURLFor:symbol 
-                                                 ofType:@"finance/chart" 
+  NSString *chartURLString = [googleSearch searchURLFor:symbol
+                                                 ofType:@"finance/chart"
                                               arguments:nil];
   NSURL *chartURL = [NSURL URLWithString:chartURLString];
   NSURLRequest *request = [NSURLRequest requestWithURL:chartURL];
@@ -306,7 +313,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
   finishedWithData:(NSData *)chartData {
   [self setChartFetcher:nil];
   NSOperationQueue *queue = [HGSOperationQueue sharedOperationQueue];
-  NSOperation *op 
+  NSOperation *op
     = [[[NSInvocationOperation alloc] initWithTarget:self
                                             selector:@selector(updateChartWithData:)
                                               object:chartData] autorelease];
@@ -336,7 +343,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
   for (NSImageRep *chartRep in chartReps) {
     if ([chartRep isKindOfClass:[NSBitmapImageRep class]]) {
       NSBitmapImageRep *oldBitmapRep = (NSBitmapImageRep *)chartRep;
-      
+
       NSSize chartSize = [self size];
       NSBitmapImageRep *newBitmapRep
         = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
@@ -349,17 +356,17 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
                                               colorSpaceName:NSCalibratedRGBColorSpace
                                                  bytesPerRow:0
                                                 bitsPerPixel:0];
-      
+
       // Create an NSGraphicsContext that draws into the new NSBitmapImageRep.
       NSGraphicsContext *nsContext
         = [NSGraphicsContext graphicsContextWithBitmapImageRep:newBitmapRep];
       [NSGraphicsContext saveGraphicsState];
       [NSGraphicsContext setCurrentContext:nsContext];
-      
+
       // Clear the bitmap to zero alpha.
       [[NSColor clearColor] set];
       NSRectFill(NSMakeRect(0, 0, chartSize.width, chartSize.height));
-      
+
       // Creep through pixel by pixel, setting the alpha for pixels of color.
       //
       // Let me explain how this work since there are some 'magic' numbers
@@ -408,7 +415,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
           }
         }
       }
-      
+
       // Replace the imageRep.
       [self removeRepresentation:oldBitmapRep];
       [self addRepresentation:newBitmapRep];
