@@ -46,8 +46,9 @@
     return nil;
   }
 
-  return [NSString stringWithCString:labelAttr.data
-                              length:labelAttr.length];
+  return [[[NSString alloc] initWithBytes:labelAttr.data
+                                   length:labelAttr.length
+                                 encoding:NSUTF8StringEncoding] autorelease];
 }
 
 - (void)unloadData {

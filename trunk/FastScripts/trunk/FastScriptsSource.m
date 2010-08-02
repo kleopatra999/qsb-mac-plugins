@@ -60,7 +60,9 @@ static HGSAction *_FSItemAction(void) {
 }
 - (void)reloadResultsCache;
 - (void)indexScriptsForApp:(FastScriptsApplication *)application
-                         operation:(NSOperation *)operation;
+                  database:(HGSMemorySearchSourceDB *)database
+                 operation:(NSOperation *)operation;
+- (void)updateResultsWithDummy:(id)dummy operation:(NSOperation *)operation;
 @end
 
 #pragma mark -
@@ -99,9 +101,9 @@ static HGSAction *_FSItemAction(void) {
   [indexingOperation_ cancel];
   [indexingOperation_ release];
   SEL update = @selector(updateResultsWithDummy:operation:);
-  indexingOperation_ = [[NSInvocationOperation alloc] hgs_initWithTarget:self
-                                                                selector:update
-                                                                  object:nil];
+  indexingOperation_ = [[HGSInvocationOperation alloc] initWithTarget:self
+                                                             selector:update
+                                                               object:nil];
   [[HGSOperationQueue sharedOperationQueue] addOperation:indexingOperation_];
 }
 
@@ -116,10 +118,12 @@ static HGSAction *_FSItemAction(void) {
     FastScriptsApplication *app = _FSApp();
     if (app) {
       [self updateAppPath];
-      [self clearResultIndex];
-      [self indexScriptsForApp:app operation:operation];
+      HGSMemorySearchSourceDB *database
+      = [HGSMemorySearchSourceDB database];
+      [self indexScriptsForApp:app database:database operation:operation];
       if (![operation isCancelled]) {
         [self saveResultsCache];
+        [self replaceCurrentDatabaseWith:database];
       }
     }
     [self updateResultsCacheAfterDelay:60.0];
@@ -137,6 +141,7 @@ static HGSAction *_FSItemAction(void) {
 #pragma mark Result Generation
 - (void)indexScriptItem:(FastScriptsScriptItem *)script
    atPathWithComponents:(NSArray *)pathComponents
+               database:(HGSMemorySearchSourceDB *)database
               operation:(NSOperation *)operation {
   if (![operation isCancelled]) {
     NSString *name = [script name];
@@ -161,17 +166,19 @@ static HGSAction *_FSItemAction(void) {
                                                     type:kFSResultType
                                                   source:self
                                               attributes:attrs];
-    [self indexResult:result];
+    [database indexResult:result];
   }
 }
 
 - (void)indexScriptLibrary:(FastScriptsScriptLibrary *)library
       atPathWithComponents:(NSArray *)pathComponents
+                  database:(HGSMemorySearchSourceDB *)database
                  operation:(NSOperation *)operation {
   if (![operation isCancelled]) {
     for (FastScriptsScriptItem *script in [library scriptItems]) {
       [self indexScriptItem:script
        atPathWithComponents:pathComponents
+                   database:database
                   operation:operation];
     }
     for (FastScriptsScriptLibrary *sublibrary in [library scriptLibraries]) {
@@ -179,18 +186,21 @@ static HGSAction *_FSItemAction(void) {
       NSArray *subpathComponents = [pathComponents arrayByAddingObject:name];
       [self indexScriptLibrary:sublibrary
           atPathWithComponents:subpathComponents
+                      database:database
                      operation:operation];
     }
   }
 }
 
 - (void)indexScriptsForApp:(FastScriptsApplication *)application
-                         operation:(NSOperation *)operation {
+                  database:(HGSMemorySearchSourceDB *)database
+                 operation:(NSOperation *)operation {
   if (![operation isCancelled]) {
     NSArray *topLevelScriptLibraries = [application topLevelScriptLibraries];
     for (FastScriptsScriptLibrary *library in topLevelScriptLibraries) {
       [self indexScriptLibrary:library
           atPathWithComponents:[NSArray array]
+                      database:database
                      operation:operation];
     }
   }

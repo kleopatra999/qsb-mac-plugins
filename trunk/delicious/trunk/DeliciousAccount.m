@@ -22,6 +22,15 @@ static const NSTimeInterval kDeliciousAuthTimeOutInterval = 15.0;
 // Open delicious.com in the user's preferred browser.
 + (BOOL)openDeliciousHomePage;
 
+- (void)authSetFetcher:(GDataHTTPFetcher *)fetcher
+      finishedWithData:(NSData *)data;
+- (void)authSetFetcher:(GDataHTTPFetcher *)fetcher
+       failedWithError:(NSError *)error;
+- (void)authFetcher:(GDataHTTPFetcher *)fetcher
+   finishedWithData:(NSData *)data;
+- (void)authFetcher:(GDataHTTPFetcher *)fetcher
+    failedWithError:(NSError *)error;
+
 @property (nonatomic, assign) BOOL authCompleted;
 @property (nonatomic, assign) BOOL authSucceeded;
 
@@ -41,7 +50,7 @@ static const NSTimeInterval kDeliciousAuthTimeOutInterval = 15.0;
 - (void)authenticate {
   NSString *userName = [self userName];
   NSString *password = [self password];
-  
+
   GDataHTTPFetcher* authSetFetcher= [self makeAuthFetcherForUsername:userName
                                                             password:password];
   if (authSetFetcher) {
@@ -55,12 +64,12 @@ static const NSTimeInterval kDeliciousAuthTimeOutInterval = 15.0;
 
 - (BOOL)authenticateWithPassword:(NSString *)password {
   BOOL authenticated = NO;
-  
+
   // Test this account to see if we can connect.
   NSString *userName = [self userName];
   GDataHTTPFetcher* authFetcher = [self makeAuthFetcherForUsername:userName
                                                           password:password];
-  
+
   if (authFetcher) {
     [self setAuthCompleted:NO];
     [self setAuthSucceeded:NO];

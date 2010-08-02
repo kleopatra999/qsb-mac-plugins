@@ -19,7 +19,7 @@
 		7F38DCE90F6865290051B7E3 /* NetworkLocation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkLocation_Prefix.pch; sourceTree = "<group>"; };
 		7F80FC710F696C5B00228142 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7F8450F50F6B1F7B000CD5C1 /* QSBRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = QSBRelease.xcconfig; path = QSB/xcconfig/QSBRelease.xcconfig; sourceTree = QSBSRCROOT; };
-		7F8453D60F6E0507000CD5C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		7F8453D60F6E0507000CD5C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8BC0B29610F3BCF60029CDA1 /* QSBDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = QSBDebug.xcconfig; path = QSB/xcconfig/QSBDebug.xcconfig; sourceTree = QSBSRCROOT; };
 		8BC0B33310F3BD920029CDA1 /* GTM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTM.framework; sourceTree = QSBBUILDROOT; };
 		8BC0B33610F3BD9F0029CDA1 /* Vermilion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Vermilion.framework; sourceTree = QSBBUILDROOT; };
@@ -49,7 +49,6 @@
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
-				7F8453D60F6E0507000CD5C1 /* SystemConfiguration.framework */,
 			);
 			name = NetworkLocation;
 			sourceTree = "<group>";
@@ -57,7 +56,10 @@
 		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				7F8453D60F6E0507000CD5C1 /* SystemConfiguration.framework */,
+				8BC0B33610F3BD9F0029CDA1 /* Vermilion.framework */,
+				7F80FC710F696C5B00228142 /* Cocoa.framework */,
+				8BC0B33310F3BD920029CDA1 /* GTM.framework */,
 			);
 			name = "Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -76,16 +78,6 @@
 				7F38DCE00F6864D90051B7E3 /* NetworkLocationSource.m */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8BC0B33610F3BD9F0029CDA1 /* Vermilion.framework */,
-				8BC0B33310F3BD920029CDA1 /* GTM.framework */,
-				7F80FC710F696C5B00228142 /* Cocoa.framework */,
-			);
-			name = "Linked Frameworks";
 			sourceTree = "<group>";
 		};
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
@@ -172,8 +164,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(QSBROOT)",
-					"\"$(SRCROOT)/../../../../../src3/googlemac/QuickSearchBox/QSB/build/Debug\"",
+					"$(QSBBUILDROOT)",
 				);
 				GCC_PREFIX_HEADER = NetworkLocation_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
@@ -187,8 +178,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(QSBROOT)",
-					"\"$(SRCROOT)/../../../../../src3/googlemac/QuickSearchBox/QSB/build/Debug\"",
+					"$(QSBBUILDROOT)",
 				);
 				GCC_PREFIX_HEADER = NetworkLocation_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;

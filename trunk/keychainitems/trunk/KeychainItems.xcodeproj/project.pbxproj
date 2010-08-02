@@ -13,7 +13,6 @@
 		7F38DE690F688CC20051B7E3 /* GTM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F38DE680F688CC20051B7E3 /* GTM.framework */; };
 		7F80FC720F696C5B00228142 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F80FC710F696C5B00228142 /* Cocoa.framework */; };
 		8B0D217E0F796E1C00FD4A12 /* HGSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0D217D0F796E1C00FD4A12 /* HGSBundle.m */; };
-		A92A5F040FC424F40009295E /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = A92A5F030FC424F40009295E /* README.markdown */; };
 		A96EC3640FC0E65C00C7651B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96EC3630FC0E65C00C7651B /* Security.framework */; };
 		A990BC310FC3890500F07039 /* HGSKeychainItemExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A990BC300FC3890500F07039 /* HGSKeychainItemExt.m */; };
 /* End PBXBuildFile section */
@@ -130,7 +129,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "KeychainItems" */;
 			buildPhases = (
-				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
 			);
@@ -160,17 +158,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		8D5B49AF048680CD000E48DA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A92A5F040FC424F40009295E /* README.markdown in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D5B49B1048680CD000E48DA /* Sources */ = {

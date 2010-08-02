@@ -32,11 +32,13 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
                     title:(NSString *)title
                      type:(NSString *)type
                      tags:(NSArray *)tags
-                     icon:(NSImage*)iconImage;
+                     icon:(NSImage*)iconImage
+                 database:(HGSMemorySearchSourceDB *)database;
 
 // Post user notification about a connection failure.
 - (void)reportConnectionFailure:(NSString *)explanation
                     successCode:(NSInteger)successCode;
+- (void)loginCredentialsChanged:(NSNotification *)notification;
 
 @end
 
@@ -50,7 +52,7 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
     HGSLogDebug(@"DeliciousBookmarks: Configuring...");
     NSBundle* sourceBundle = HGSGetPluginBundle();
     NSString *iconPath = [sourceBundle pathForImageResource:@"delicious"];
-    tagIcon_ = [[NSImage alloc] initByReferencingFile:iconPath];    
+    tagIcon_ = [[NSImage alloc] initByReferencingFile:iconPath];
     account_ = [[configuration objectForKey:kHGSExtensionAccountKey] retain];
     lastUpdate_ = [@"unknown" retain];
     if (account_) {
@@ -98,7 +100,7 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
   return isValid;
 }
 
-- (HGSResult *)preFilterResult:(HGSResult *)result 
+- (HGSResult *)preFilterResult:(HGSResult *)result
                matchesForQuery:(HGSQuery*)query
                   pivotObjects:(HGSResultArray *)pivotObjects {
   // For the time being, only worry about handling a single pivot
@@ -117,11 +119,11 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
       }
     }
   }
-  
+
   return result;
 }
 
-- (HGSScoredResult *)postFilterScoredResult:(HGSScoredResult *)result 
+- (HGSScoredResult *)postFilterScoredResult:(HGSScoredResult *)result
                             matchesForQuery:(HGSQuery *)query
                                pivotObjects:(HGSResultArray *)pivotObjects {
   // If the query is empty, we must be pivoting - thus we boost the
@@ -137,7 +139,7 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
                                    matchedTerm:[result matchedTerm]
                                 matchedIndexes:[result matchedIndexes]];
   }
-  
+
   return result;
 }
 
@@ -154,8 +156,8 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
     HGSLogDebug(@"DeliciousBookmarks: Going ahead with fetch");
     NSURL *bookmarkRequestURL = [NSURL URLWithString:url];
     NSMutableURLRequest *bookmarkRequest
-      = [NSMutableURLRequest requestWithURL:bookmarkRequestURL 
-                                cachePolicy:NSURLRequestReloadIgnoringCacheData 
+      = [NSMutableURLRequest requestWithURL:bookmarkRequestURL
+                                cachePolicy:NSURLRequestReloadIgnoringCacheData
                             timeoutInterval:15.0];
     [bookmarkRequest setValue: kDeliciousPluginUserAgent
            forHTTPHeaderField:@"User-Agent"];
@@ -206,8 +208,8 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
                                    options:0
                                      error:nil] autorelease];
   NSArray *bookmarkNodes = [bookmarksXML nodesForXPath:@"//post" error:NULL];
-  [self clearResultIndex];
 
+  HGSMemorySearchSourceDB *db = [HGSMemorySearchSourceDB database];
   NSMutableSet *allTags = [NSMutableSet setWithCapacity:50];
   NSEnumerator *nodeEnumerator = [bookmarkNodes objectEnumerator];
   NSXMLElement *bookmark;
@@ -230,7 +232,8 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
                       title:name
                        type:HGS_SUBTYPE(kHGSTypeWebBookmark, @"deliciousbookmarks")
                        tags:tagArray
-                       icon:[NSImage imageNamed:@"blue-nav"]];
+                       icon:[NSImage imageNamed:@"blue-nav"]
+                   database:db];
   }
 
   NSString *username = [[self keychainItem] username];
@@ -241,10 +244,11 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
                       title:tag
                        type:HGS_SUBTYPE(kHGSTypeWebpage, @"delicioustag")
                        tags: nil
-                       icon:tagIcon_];
+                       icon:tagIcon_
+                   database:db];
   }
-
-  currentlyFetching_ = NO;  
+  [self replaceCurrentDatabaseWith:db];
+  currentlyFetching_ = NO;
   [bookmarkData_ release];
   bookmarkData_ = nil;
 }
@@ -253,7 +257,8 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
                     title:(NSString *)title
                      type:(NSString *)type
                      tags:(NSArray *)tags
-                     icon:(NSImage*)iconImage {
+                     icon:(NSImage*)iconImage
+                 database:(HGSMemorySearchSourceDB *)database {
   HGSLogDebug(@"DeliciousBookmarks: Indexing a bookmark");
   if (!url) {
     return;
@@ -274,15 +279,15 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
     [attributes setObject:iconImage forKey:kHGSObjectAttributeIconKey];
   }
 
-  HGSUnscoredResult* result 
+  HGSUnscoredResult* result
     = [HGSUnscoredResult resultWithURL:[NSURL URLWithString:url]
                                   name:([title length] > 0 ? title : url)
                                   type:type
                                 source:self
                             attributes:attributes];
-  [self indexResult:result
-               name:title
-         otherTerms:tags];
+  [database indexResult:result
+                   name:title
+             otherTerms:tags];
   HGSLogDebug(@"DeliciousBookmarks: Done indexing a bookmark");
 }
 
@@ -297,7 +302,7 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
 #pragma mark -
 #pragma mark NSURLConnection Delegate Methods
 
-- (void)connection:(NSURLConnection *)connection 
+- (void)connection:(NSURLConnection *)connection
 didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
   HGSLogDebug(@"DeliciousBookmarks: Request was challenged");
   HGSAssert(connection == connection_, nil);
@@ -332,7 +337,7 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
   }
 }
 
-- (void)connection:(NSURLConnection *)connection 
+- (void)connection:(NSURLConnection *)connection
 didReceiveResponse:(NSURLResponse *)response {
   HGSLogDebug(@"DeliciousBookmarks: Request got response");
   HGSAssert(connection == connection_, nil);
@@ -340,7 +345,7 @@ didReceiveResponse:(NSURLResponse *)response {
   bookmarkData_ = [[NSMutableData alloc] init];
 }
 
-- (void)connection:(NSURLConnection *)connection 
+- (void)connection:(NSURLConnection *)connection
     didReceiveData:(NSData *)data {
   HGSLogDebug(@"DeliciousBookmarks: Request got data");
   HGSAssert(connection == connection_, nil);
@@ -354,7 +359,7 @@ didReceiveResponse:(NSURLResponse *)response {
   [self performSelector:currentCallback_];
 }
 
-- (void)connection:(NSURLConnection *)connection 
+- (void)connection:(NSURLConnection *)connection
   didFailWithError:(NSError *)error {
   HGSLogDebug(@"DeliciousBookmarks: Request failed");
   HGSAssert(connection == connection_, nil);
@@ -402,9 +407,9 @@ didReceiveResponse:(NSURLResponse *)response {
     previousErrorReportingTime_ = currentTime;
     HGSUserMessenger *messenger = [HGSUserMessenger sharedUserMessenger];
     NSString *errorSummary = HGSLocalizedString(@"Delicious Bookmarks", nil);
-    [messenger displayUserMessage:errorSummary 
-                      description:explanation 
-                             name:@"DeliciousBookmarksSource" 
+    [messenger displayUserMessage:errorSummary
+                      description:explanation
+                             name:@"DeliciousBookmarksSource"
                             image:nil
                              type:successCode];
   }
