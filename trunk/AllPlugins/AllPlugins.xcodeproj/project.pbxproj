@@ -49,6 +49,7 @@
 				8BA0DB4111664FE200839F5C /* PBXTargetDependency */,
 				D48541B21166A0AA00D7B155 /* PBXTargetDependency */,
 				C9A69CA911D7FA370062706D /* PBXTargetDependency */,
+				D47D416211A358C2009CF09D /* PBXTargetDependency */,
 			);
 			name = AllPlugins;
 			productName = AllPlugins;
@@ -223,6 +224,19 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = WAlpha;
+		D47D415F11A358A8009CF09D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D47D415811A358A8009CF09D /* Monocle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* Monocle.hgs */;
+			remoteInfo = Monocle;
+		};
+		D47D416111A358C2009CF09D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D47D415811A358A8009CF09D /* Monocle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* Monocle */;
+			remoteInfo = Monocle;
 		};
 		D48541AF1166A08900D7B155 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -275,6 +289,7 @@
 		8BC02A2510F3BBE30029CDA1 /* Twitter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Twitter.xcodeproj; path = ../twitter/trunk/Twitter.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainItems.xcodeproj; path = ../keychainitems/trunk/KeychainItems.xcodeproj; sourceTree = SOURCE_ROOT; };
 		C9A69C9C11D7F9F60062706D /* WAlpha.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WAlpha.xcodeproj; path = ../WAlpha/WAlpha.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D47D415811A358A8009CF09D /* Monocle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Monocle.xcodeproj; path = ../Monocle/trunk/Monocle.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D48541A81166A08900D7B155 /* FastScripts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FastScripts.xcodeproj; path = ../FastScripts/trunk/FastScripts.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -326,6 +341,7 @@
 				8BA918D11129BE69004A431F /* Delicious.xcodeproj */,
 				8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */,
 				D48541A81166A08900D7B155 /* FastScripts.xcodeproj */,
+				D47D415811A358A8009CF09D /* Monocle.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -373,6 +389,10 @@
 			isa = PBXGroup;
 			children = (
 				C9A69CA411D7F9F60062706D /* WAlpha.hgs */,
+		D47D415911A358A8009CF09D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D47D416011A358A8009CF09D /* Monocle.hgs */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -407,6 +427,10 @@
 				{
 					ProductGroup = 8BC8A569115DCE0B00A6E783 /* Products */;
 					ProjectRef = 8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */;
+				},
+				{
+					ProductGroup = D47D415911A358A8009CF09D /* Products */;
+					ProjectRef = D47D415811A358A8009CF09D /* Monocle.xcodeproj */;
 				},
 				{
 					ProductGroup = 8BC02A0B10F3BBC80029CDA1 /* Products */;
@@ -519,6 +543,11 @@
 			fileType = wrapper.cfbundle;
 			path = WAlpha.hgs;
 			remoteRef = C9A69CA311D7F9F60062706D /* PBXContainerItemProxy */;
+		D47D416011A358A8009CF09D /* Monocle.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Monocle.hgs;
+			remoteRef = D47D415F11A358A8009CF09D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		D48541B01166A08900D7B155 /* FastScripts.hgs */ = {
@@ -619,6 +648,10 @@
 			isa = PBXTargetDependency;
 			name = WAlpha;
 			targetProxy = C9A69CA811D7FA370062706D /* PBXContainerItemProxy */;
+		D47D416211A358C2009CF09D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Monocle;
+			targetProxy = D47D416111A358C2009CF09D /* PBXContainerItemProxy */;
 		};
 		D48541B21166A0AA00D7B155 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
