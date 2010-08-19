@@ -224,18 +224,19 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = WAlpha;
+		};
 		D47D415F11A358A8009CF09D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D47D415811A358A8009CF09D /* Monocle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* Monocle.hgs */;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = Monocle;
 		};
 		D47D416111A358C2009CF09D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D47D415811A358A8009CF09D /* Monocle.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* Monocle */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = Monocle;
 		};
 		D48541AF1166A08900D7B155 /* PBXContainerItemProxy */ = {
@@ -389,6 +390,10 @@
 			isa = PBXGroup;
 			children = (
 				C9A69CA411D7F9F60062706D /* WAlpha.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D47D415911A358A8009CF09D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +548,8 @@
 			fileType = wrapper.cfbundle;
 			path = WAlpha.hgs;
 			remoteRef = C9A69CA311D7F9F60062706D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D47D416011A358A8009CF09D /* Monocle.hgs */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -648,6 +655,7 @@
 			isa = PBXTargetDependency;
 			name = WAlpha;
 			targetProxy = C9A69CA811D7FA370062706D /* PBXContainerItemProxy */;
+		};
 		D47D416211A358C2009CF09D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Monocle;
