@@ -252,17 +252,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(QSBBUILDROOT)",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/GoogleBreakpad\"",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/Growl\"",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/Sparkle\"",
 				);
 				GCC_PREFIX_HEADER = WAlpha_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/google-toolbox-for-mac/SnowLeopardGcov\"",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/google-toolbox-for-mac/TigerGcov\"",
-				);
 				PRODUCT_NAME = WAlpha;
 				WRAPPER_EXTENSION = hgs;
 			};
@@ -275,17 +267,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(QSBBUILDROOT)",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/GoogleBreakpad\"",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/Growl\"",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/Sparkle\"",
 				);
 				GCC_PREFIX_HEADER = WAlpha_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/google-toolbox-for-mac/SnowLeopardGcov\"",
-					"\"$(SRCROOT)/../../Sources/qsb-mac-read-only/QuickSearchBox/externals/google-toolbox-for-mac/TigerGcov\"",
-				);
 				PRODUCT_NAME = WAlpha;
 				WRAPPER_EXTENSION = hgs;
 			};

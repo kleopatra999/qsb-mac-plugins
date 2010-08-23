@@ -54,6 +54,18 @@
 			name = AllPlugins;
 			productName = AllPlugins;
 		};
+		8BFE020F121F159800D61955 /* Install Plugins */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8BFE021B121F15B400D61955 /* Build configuration list for PBXAggregateTarget "Install Plugins" */;
+			buildPhases = (
+				8BFE0252121F17D000D61955 /* CopyFiles */,
+			);
+			dependencies = (
+				8BFE0213121F159F00D61955 /* PBXTargetDependency */,
+			);
+			name = "Install Plugins";
+			productName = "Install Plugins";
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -67,6 +79,19 @@
 		8BA0DB1011664EFD00839F5C /* Delicious.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA918D91129BE69004A431F /* Delicious.hgs */; };
 		8BA0DB1B11664F1100839F5C /* YubNub-QSB.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA0DB1A11664F0D00839F5C /* YubNub-QSB.hgs */; };
 		8BA0DB4211664FEC00839F5C /* Send_To_THL.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA0DB3F11664FD900839F5C /* Send_To_THL.hgs */; };
+		8BFE0245121F17AD00D61955 /* Monocle.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = D47D416011A358A8009CF09D /* Monocle.hgs */; };
+		8BFE0246121F17B200D61955 /* Monocle.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = D47D416011A358A8009CF09D /* Monocle.hgs */; };
+		8BFE0247121F17B200D61955 /* FastScripts.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = D48541B01166A08900D7B155 /* FastScripts.hgs */; };
+		8BFE0248121F17B200D61955 /* Send_To_THL.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA0DB3F11664FD900839F5C /* Send_To_THL.hgs */; };
+		8BFE0249121F17B200D61955 /* KeychainItems.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC8A570115DCE0B00A6E783 /* KeychainItems.hgs */; };
+		8BFE024A121F17B200D61955 /* Delicious.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA918D91129BE69004A431F /* Delicious.hgs */; };
+		8BFE024B121F17B200D61955 /* Twitter.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A2D10F3BBE30029CDA1 /* Twitter.hgs */; };
+		8BFE024C121F17B200D61955 /* NetworkLocation.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A1210F3BBC80029CDA1 /* NetworkLocation.hgs */; };
+		8BFE024D121F17B200D61955 /* Rot13.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA918E21129BE75004A431F /* Rot13.hgs */; };
+		8BFE024E121F17B200D61955 /* StockQuoter.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A2410F3BBD60029CDA1 /* StockQuoter.hgs */; };
+		8BFE024F121F17B200D61955 /* Send_To_RTM.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A1B10F3BBCE0029CDA1 /* Send_To_RTM.hgs */; };
+		8BFE0250121F17B200D61955 /* YubNub-QSB.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BA0DB1A11664F0D00839F5C /* YubNub-QSB.hgs */; };
+		8BFE0251121F17B200D61955 /* WAlpha.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9A69CA411D7F9F60062706D /* WAlpha.hgs */; };
 		C9A69CA711D7FA050062706D /* WAlpha.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9A69CA411D7F9F60062706D /* WAlpha.hgs */; };
 /* End PBXBuildFile section */
 
@@ -211,6 +236,13 @@
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = KeychainItems;
 		};
+		8BFE0212121F159F00D61955 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC02A0210F3BBB80029CDA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BC02A2F10F3BBF60029CDA1 /* AllPlugins */;
+			remoteInfo = AllPlugins;
+		};
 		C9A69CA311D7F9F60062706D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9A69C9C11D7F9F60062706D /* WAlpha.xcodeproj */;
@@ -262,6 +294,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				8BFE0245121F17AD00D61955 /* Monocle.hgs in CopyFiles */,
 				8B2AB5AE1204C67D00C84242 /* FastScripts.hgs in CopyFiles */,
 				8BA0DB4211664FEC00839F5C /* Send_To_THL.hgs in CopyFiles */,
 				8BA0DB0911664EDE00839F5C /* KeychainItems.hgs in CopyFiles */,
@@ -273,6 +306,27 @@
 				8BA0DB0C11664EE700839F5C /* Send_To_RTM.hgs in CopyFiles */,
 				8BA0DB1B11664F1100839F5C /* YubNub-QSB.hgs in CopyFiles */,
 				C9A69CA711D7FA050062706D /* WAlpha.hgs in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BFE0252121F17D000D61955 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$HOME/Library/Application Support/Quick Search Box/Plugins";
+			dstSubfolderSpec = 0;
+			files = (
+				8BFE0246121F17B200D61955 /* Monocle.hgs in CopyFiles */,
+				8BFE0247121F17B200D61955 /* FastScripts.hgs in CopyFiles */,
+				8BFE0248121F17B200D61955 /* Send_To_THL.hgs in CopyFiles */,
+				8BFE0249121F17B200D61955 /* KeychainItems.hgs in CopyFiles */,
+				8BFE024A121F17B200D61955 /* Delicious.hgs in CopyFiles */,
+				8BFE024B121F17B200D61955 /* Twitter.hgs in CopyFiles */,
+				8BFE024C121F17B200D61955 /* NetworkLocation.hgs in CopyFiles */,
+				8BFE024D121F17B200D61955 /* Rot13.hgs in CopyFiles */,
+				8BFE024E121F17B200D61955 /* StockQuoter.hgs in CopyFiles */,
+				8BFE024F121F17B200D61955 /* Send_To_RTM.hgs in CopyFiles */,
+				8BFE0250121F17B200D61955 /* YubNub-QSB.hgs in CopyFiles */,
+				8BFE0251121F17B200D61955 /* WAlpha.hgs in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +529,7 @@
 				8BC02A2F10F3BBF60029CDA1 /* AllPlugins */,
 				8BA0DB451166502000839F5C /* Package Plugins */,
 				8B17FD741176580900E7A908 /* Upload Plugins */,
+				8BFE020F121F159800D61955 /* Install Plugins */,
 			);
 		};
 /* End PBXProject section */
@@ -578,7 +633,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# You must set GOOGLE_CODE_USER to your Google code user name\n# and GOOGLE_CODE_PASSWORD to your Google code password (not your email password, but your actual code password)\n\nset -o errexit\nset -o nounset\nset -o verbose\n\n# Must keep these arrays in order. No 2-D arrays in bash.\nPLUGINS=( \"Delicious\"\n          \"Twitter\"\n          \"StockQuoter\"\n          \"Send_To_THL\"\n          \"Send_To_RTM\"\n          \"Rot13\"\n          \"KeychainItems\"\n          \"YubNub-QSB\"\n          \"NetworkLocation\"\n          \"FastScripts\"\n\t\t \"WAlpha\" )\nDESCRIPTIONS=( \"Search your delicious bookmarks. (http://delicious.com/)\"\n               \"Post to twitter. (http://twitter.com)\"\n               \"Search for stock information and display directly in QSB.\"\n               \"Send a note to The Hit List. (http://www.potionfactory.com/thehitlist/)\"\n               \"Send a note to Remember The Milk. (http://www.rememberthemilk.com)\"\n               \"Rot 13 encode text. (http://en.wikipedia.org/wiki/ROT13)\"\n               \"Search your keychain.\"\n               \"Search yubnub. (http://yubnub.org/)\"\n               \"Search your network locations.\" \n               \"Search and execute your FastScripts.\"\n               \"Search Wolfram Alpha.\")\n\nindex=0\nfor PLUGIN in \"${PLUGINS[@]}\"; do\n\t\"${SRCROOT}/googlecode_upload.py\" -p qsb-mac-plugins -s \"${DESCRIPTIONS[$index]}\" -u $GOOGLE_CODE_USER -w $GOOGLE_CODE_PASSWORD -l Featured,Type-Archive,OpSys-OSX \"${BUILT_PRODUCTS_DIR}/${PLUGIN}.hgs.${QSB_VERSION}.zip\"\n\tlet \"index = $index + 1\"\ndone";
+			shellScript = "# You must set GOOGLE_CODE_USER to your Google code user name\n# and GOOGLE_CODE_PASSWORD to your Google code password (not your email password, but your actual code password)\n\nset -o errexit\nset -o nounset\nset -o verbose\n\n# Must keep these arrays in order. No 2-D arrays in bash.\nPLUGINS=( \"Delicious\"\n          \"Twitter\"\n          \"StockQuoter\"\n          \"Send_To_THL\"\n          \"Send_To_RTM\"\n          \"Rot13\"\n          \"KeychainItems\"\n          \"YubNub-QSB\"\n          \"NetworkLocation\"\n          \"FastScripts\"\n\t\t \"WAlpha\"\n\t\t \"Monocle\" )\nDESCRIPTIONS=( \"Search your delicious bookmarks. (http://delicious.com/)\"\n               \"Post to twitter. (http://twitter.com)\"\n               \"Search for stock information and display directly in QSB.\"\n               \"Send a note to The Hit List. (http://www.potionfactory.com/thehitlist/)\"\n               \"Send a note to Remember The Milk. (http://www.rememberthemilk.com)\"\n               \"Rot 13 encode text. (http://en.wikipedia.org/wiki/ROT13)\"\n               \"Search your keychain.\"\n               \"Search yubnub. (http://yubnub.org/)\"\n               \"Search your network locations.\" \n               \"Search and execute your FastScripts. (http://www.red-sweater.com/fastscripts/)\"\n               \"Search Wolfram Alpha. (http://www.wolframalpha.com/)\"\n\t\t\t \"Search your Monocle search engines. (http://wafflesoftware.net/monocle/)\" )\n\nindex=0\nfor PLUGIN in \"${PLUGINS[@]}\"; do\n\t\"${SRCROOT}/googlecode_upload.py\" -p qsb-mac-plugins -s \"${DESCRIPTIONS[$index]}\" -u $GOOGLE_CODE_USER -w $GOOGLE_CODE_PASSWORD -l Featured,Type-Archive,OpSys-OSX \"${BUILT_PRODUCTS_DIR}/${PLUGIN}.hgs.${QSB_VERSION}.zip\"\n\tlet \"index = $index + 1\"\ndone";
 		};
 		8BA0DB6611665EED00839F5C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -650,6 +705,11 @@
 			isa = PBXTargetDependency;
 			name = KeychainItems;
 			targetProxy = 8BC8A571115DCE2F00A6E783 /* PBXContainerItemProxy */;
+		};
+		8BFE0213121F159F00D61955 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BC02A2F10F3BBF60029CDA1 /* AllPlugins */;
+			targetProxy = 8BFE0212121F159F00D61955 /* PBXContainerItemProxy */;
 		};
 		C9A69CA911D7FA370062706D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -725,6 +785,27 @@
 			};
 			name = Release;
 		};
+		8BFE0210121F159800D61955 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Install Plugins";
+			};
+			name = Debug;
+		};
+		8BFE0211121F159800D61955 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Install Plugins";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -760,6 +841,15 @@
 			buildConfigurations = (
 				8BC02A3010F3BBF60029CDA1 /* Debug */,
 				8BC02A3110F3BBF60029CDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BFE021B121F15B400D61955 /* Build configuration list for PBXAggregateTarget "Install Plugins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BFE0210121F159800D61955 /* Debug */,
+				8BFE0211121F159800D61955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
