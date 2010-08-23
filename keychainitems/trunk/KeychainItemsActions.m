@@ -31,7 +31,7 @@
 //
 
 #import <Vermilion/Vermilion.h>
-#import "HGSKeychainItemExt.h"
+#import <Vermilion/HGSKeychainItem.h>
 
 extern NSString *kKeychainItemKey;
 
@@ -50,9 +50,6 @@ extern NSString *kKeychainItemKey;
       NSString *password = [item password];
       [[NSPasteboard generalPasteboard] declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:self];
       [[NSPasteboard generalPasteboard] setString:password forType:NSStringPboardType];
-
-      // don't keep the data around
-      [item unloadData];
     }
   }
   return YES;
@@ -75,8 +72,6 @@ extern NSString *kKeychainItemKey;
       [[NSPasteboard generalPasteboard] declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:self];
       [[NSPasteboard generalPasteboard] setString:accountName forType:NSStringPboardType];
 
-      // don't keep the data around
-      [item unloadData];
     }
   }
   return YES;
@@ -101,9 +96,6 @@ extern NSString *kKeychainItemKey;
                                       name:@"KeychainItem"
                                      image:nil
                                       type:kHGSUserMessageNoteType];
-
-      // don't keep the data around
-      [item unloadData];
     }
   }
   return YES;

@@ -114,11 +114,11 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
   [super dealloc];
 }
 
-- (HGSResult *)result {
+- (HGSScoredResult *)result {
   return [[result_ retain] autorelease];
 }
 
-- (NSNumber *)setResult:(HGSResult *)result {
+- (BOOL)qsb_setResult:(HGSScoredResult *)result {
   [result_ autorelease];
   result_ = [result retain];
 
@@ -142,7 +142,7 @@ GTM_METHOD_CHECK(NSScanner, gtm_scanJSONObjectString:);
   if (!useCustomView) {
     HGSLogDebug(@"Failed to find stock symbol in result url '%@'.", resultURL);
   }
-  return [NSNumber numberWithBool:useCustomView];
+  return useCustomView;
 }
 
 #pragma mark Stock Data Methods

@@ -6,14 +6,14 @@
 //  Copyright 2009 Google Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <QSBPluginUI/QSBPluginUI.h>
 
 @class GDataHTTPFetcher;
 @class HGSResult;
 
-@interface StockQuoterViewController : NSViewController {
+@interface StockQuoterViewController : NSViewController<QSBCustomResultView> {
  @private
-  HGSResult *result_;
+  HGSScoredResult *result_;
   NSAttributedString *companyNameAndSymbol_;
   CGFloat openMarketPrice_;
   NSString *openMarketChangeAndPercent_;

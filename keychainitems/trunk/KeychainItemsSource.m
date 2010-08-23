@@ -31,7 +31,7 @@
 //
 
 #import <Vermilion/Vermilion.h>
-#import "HGSKeychainItemExt.h"
+#import <Vermilion/HGSKeychainItem.h>
 
 const NSString *kKeychainItemKey = @"keychainItem";
 static NSString *kKeychainItemType = @"keychain";
@@ -58,7 +58,6 @@ static OSStatus KeychainModified(SecKeychainEvent keychainEvent,
 @implementation KeychainItemsSource
 
 - (HGSResult*)resultForItem:(SecKeychainItemRef)itemRef ofClass:(SecItemClass)itemClass {
-  CFRetain(itemRef); // HGSKeychainItem releases but doesn't retain
   HGSKeychainItem *item = [[[HGSKeychainItem alloc] initWithRef:itemRef] autorelease];
 
   // create and return the result
