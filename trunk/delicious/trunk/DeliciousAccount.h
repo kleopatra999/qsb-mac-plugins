@@ -1,9 +1,10 @@
 #import <Vermilion/Vermilion.h>
 #import <QSBPluginUI/QSBPluginUI.h>
+#import "DeliciousFetcherSource.h"
 
 @class DeliciousAccountEditController;
 
-@interface DeliciousAccount : HGSSimpleAccount {
+@interface DeliciousAccount : HGSSimpleAccount<DeliciousFetcherSource> {
  @private
   // Set by and only useful within authentication.
   BOOL authCompleted_;

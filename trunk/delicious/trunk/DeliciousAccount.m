@@ -1,10 +1,8 @@
 #import "DeliciousAccount.h"
 #import "DeliciousConstants.h"
+#import "ClassicDeliciousFetcher.h"
 #import <GTM/GTMBase64.h>
 #import <GData/GDataHTTPFetcher.h>
-
-static NSString *const kDeliciousURLString = @"http://delicious.com/";
-static NSString *const kDeliciousAccountTypeName = @"com.nparry.qsb.delicious.account";
 
 // Authentication timing constants.
 static const NSTimeInterval kDeliciousAuthRetryInterval = 0.1;
@@ -42,7 +40,7 @@ static const NSTimeInterval kDeliciousAuthTimeOutInterval = 15.0;
 @synthesize authSucceeded = authSucceeded_;
 
 - (NSString *)type {
-  return kDeliciousAccountTypeName;
+  return kClassicDeliciousAccountTypeName;
 }
 
 #pragma mark Account Editing
@@ -100,7 +98,7 @@ static const NSTimeInterval kDeliciousAuthTimeOutInterval = 15.0;
 
 - (GDataHTTPFetcher*)makeAuthFetcherForUsername:(NSString*)userName
                                        password:(NSString*)password {
-  NSURL *authURL = [NSURL URLWithString:kDeliciousLastUpdateURL];
+  NSURL *authURL = [NSURL URLWithString: [ClassicDeliciousFetcher fillInUrlTemplate: kDeliciousLastUpdateURL]];
   NSMutableURLRequest *authRequest
     = [NSMutableURLRequest requestWithURL:authURL
                               cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
@@ -176,6 +174,18 @@ static const NSTimeInterval kDeliciousAuthTimeOutInterval = 15.0;
          [error code]);
   [self setAuthCompleted:YES];
   [self setAuthSucceeded:NO];
+}
+
+#pragma mark DeliciousFetcherSource Methods
+
+- (DeliciousFetcher*) fetcherForUrl:(NSString*) url
+                   withKeychainItem:(HGSKeychainItem*) keychainItem
+                          userAgent:(NSString*) userAgent
+                           receiver:(id<DeliciousReceiver>) receiver{
+  return [[[ClassicDeliciousFetcher alloc] initWithUrl: url
+                                          keychainItem: keychainItem
+                                             userAgent: userAgent
+                                              receiver: receiver] autorelease];
 }
 
 @end

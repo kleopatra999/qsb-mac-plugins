@@ -1,25 +1,27 @@
 #import <Vermilion/HGSKeychainItem.h>
 #import "DeliciousConstants.h"
+#import "DeliciousFetcherSource.h"
+#import "DeliciousReceiver.h"
 
 static const NSTimeInterval kDeliciousRefreshSeconds = 3600.0;  // 60 minutes.
 
 // Only report errors to user once an hour.
 static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hour
 
-@interface DeliciousBookmarksSource : HGSMemorySearchSource <HGSAccountClientProtocol> {
+@interface DeliciousBookmarksSource : HGSMemorySearchSource <HGSAccountClientProtocol, DeliciousReceiver> {
  @private
   NSTimer *updateTimer_;
   NSMutableData *bookmarkData_;
   NSString *lastUpdate_;
   HGSSimpleAccount *account_;
-  NSURLConnection *connection_;
+  DeliciousFetcher *fetcher_;
   BOOL currentlyFetching_;
   SEL currentCallback_;
   NSTimeInterval previousErrorReportingTime_;
   NSImage *tagIcon_;
 }
 
-@property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic, retain) DeliciousFetcher *fetcher;
 
 - (HGSKeychainItem *)keychainItem;
 - (void)setUpPeriodicRefresh;
@@ -44,7 +46,7 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
 
 @implementation DeliciousBookmarksSource
 
-@synthesize connection = connection_;
+@synthesize fetcher = fetcher_;
 
 - (id)initWithConfiguration:(NSDictionary *)configuration {
   HGSLogDebug(@"DeliciousBookmarks: Instance init");
@@ -58,10 +60,10 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
     if (account_) {
       HGSLogDebug(@"DeliciousBookmarks: Setting up fetcher");
       // Fetch, and schedule a timer to update every hour.
+      [self setUpPeriodicRefresh];
       [self startAsynchronousBookmarkFetch:kDeliciousLastUpdateURL
                                   callback:@selector(checkLastUpdate)
                             waitIfFetching:true];
-      [self setUpPeriodicRefresh];
       // Watch for credential changes.
       NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
       [nc addObserver:self
@@ -154,19 +156,19 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
   NSString *password = [keychainItem password];
   if ((!currentlyFetching_ || !shouldWait) && userName && password) {
     HGSLogDebug(@"DeliciousBookmarks: Going ahead with fetch");
-    NSURL *bookmarkRequestURL = [NSURL URLWithString:url];
-    NSMutableURLRequest *bookmarkRequest
-      = [NSMutableURLRequest requestWithURL:bookmarkRequestURL
-                                cachePolicy:NSURLRequestReloadIgnoringCacheData
-                            timeoutInterval:15.0];
-    [bookmarkRequest setValue: kDeliciousPluginUserAgent
-           forHTTPHeaderField:@"User-Agent"];
     currentlyFetching_ = YES;
     currentCallback_ = selector;
-    NSURLConnection *connection
-      = [NSURLConnection connectionWithRequest:bookmarkRequest
-                                      delegate:self];
-    [self setConnection:connection];
+    id<DeliciousFetcherSource> dfs = (id<DeliciousFetcherSource>)account_;
+    DeliciousFetcher *fetcher = [dfs fetcherForUrl: url
+                                  withKeychainItem: keychainItem
+                                         userAgent: kDeliciousPluginUserAgent
+                                          receiver: self];
+    
+    // The fetcher may be async, or it may be synchronous and already done
+    // Only store it if we are still in-flight
+    if (currentlyFetching_) {
+      [self setFetcher:fetcher];
+    }
   }
 }
 
@@ -291,92 +293,15 @@ static const NSTimeInterval kDeliciousErrorReportingInterval = 3600.0;  // 1 hou
   HGSLogDebug(@"DeliciousBookmarks: Done indexing a bookmark");
 }
 
-- (void)setConnection:(NSURLConnection *)connection {
-  if (connection_ != connection) {
-    [connection_ cancel];
-    [connection_ release];
-    connection_ = [connection retain];
+- (void)setFetcher:(DeliciousFetcher *)fetcher {
+  if (fetcher_ != fetcher) {
+    [fetcher_ cancel];
+    [fetcher_ release];
+    fetcher_ = [fetcher retain];
   }
 }
 
 #pragma mark -
-#pragma mark NSURLConnection Delegate Methods
-
-- (void)connection:(NSURLConnection *)connection
-didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-  HGSLogDebug(@"DeliciousBookmarks: Request was challenged");
-  HGSAssert(connection == connection_, nil);
-  HGSKeychainItem* keychainItem = [self keychainItem];
-  NSString *userName = [keychainItem username];
-  NSString *password = [keychainItem password];
-
-  id<NSURLAuthenticationChallengeSender> sender = [challenge sender];
-  NSInteger previousFailureCount = [challenge previousFailureCount];
-
-  if (previousFailureCount > 3) {
-    // Don't keep trying.
-    [updateTimer_ invalidate];
-    updateTimer_ = nil;
-    NSString *errorFormat = HGSLocalizedString(@"Authentication for '%@' failed."
-                                               @"Check your password.", nil);
-    NSString *errorString = [NSString stringWithFormat:errorFormat, userName];
-    [self reportConnectionFailure:errorString successCode:kHGSUserMessageNoteType];
-    HGSLogDebug(@"DeliciousBookmarkSource authentication failure for account '%@'.",
-                userName);
-    return;
-  }
-
-  if (userName && password) {
-    NSURLCredential *creds
-      = [NSURLCredential credentialWithUser:userName
-                                   password:password
-                                persistence:NSURLCredentialPersistenceNone];
-    [sender useCredential:creds forAuthenticationChallenge:challenge];
-  } else {
-    [sender continueWithoutCredentialForAuthenticationChallenge:challenge];
-  }
-}
-
-- (void)connection:(NSURLConnection *)connection
-didReceiveResponse:(NSURLResponse *)response {
-  HGSLogDebug(@"DeliciousBookmarks: Request got response");
-  HGSAssert(connection == connection_, nil);
-  [bookmarkData_ release];
-  bookmarkData_ = [[NSMutableData alloc] init];
-}
-
-- (void)connection:(NSURLConnection *)connection
-    didReceiveData:(NSData *)data {
-  HGSLogDebug(@"DeliciousBookmarks: Request got data");
-  HGSAssert(connection == connection_, nil);
-  [bookmarkData_ appendData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-  HGSLogDebug(@"DeliciousBookmarks: Request finished, time to dispatch");
-  HGSAssert(connection == connection_, nil);
-  [self setConnection:nil];
-  [self performSelector:currentCallback_];
-}
-
-- (void)connection:(NSURLConnection *)connection
-  didFailWithError:(NSError *)error {
-  HGSLogDebug(@"DeliciousBookmarks: Request failed");
-  HGSAssert(connection == connection_, nil);
-  [self setConnection:nil];
-  currentlyFetching_ = NO;
-  [bookmarkData_ release];
-  bookmarkData_ = nil;
-  HGSKeychainItem* keychainItem = [self keychainItem];
-  NSString *userName = [keychainItem username];
-  NSString *errorFormat = HGSLocalizedString(@"Fetch for '%@' failed. (%d)", nil);
-  NSString *errorString = [NSString stringWithFormat:errorFormat,
-                           userName, [error code]];
-  [self reportConnectionFailure:errorString successCode:kHGSUserMessageErrorType];
-  HGSLogDebug(@"DeliciousBookmarkSource connection failure (%d) '%@'.",
-              [error code], [error localizedDescription]);
-}
-
 #pragma mark Authentication & Refresh
 
 - (void)loginCredentialsChanged:(NSNotification *)notification {
@@ -393,10 +318,10 @@ didReceiveResponse:(NSURLResponse *)response {
   // If the login changes, we should update immediately, and make sure the
   // periodic refresh is enabled (it would have been shut down if the previous
   // credentials were incorrect).
+  [self setUpPeriodicRefresh];
   [self startAsynchronousBookmarkFetch:kDeliciousLastUpdateURL
                               callback:@selector(checkLastUpdate)
                         waitIfFetching:true];
-  [self setUpPeriodicRefresh];
 }
 
 - (void)reportConnectionFailure:(NSString *)explanation
@@ -430,6 +355,40 @@ didReceiveResponse:(NSURLResponse *)response {
 - (HGSKeychainItem *)keychainItem {
   return [HGSKeychainItem keychainItemForService:[account_ identifier]
                                         username:nil];
+}
+
+#pragma mark -
+#pragma mark DeliciousReceiver Methods
+
+- (void)authenticationFailed {
+  currentlyFetching_ = NO;
+  [updateTimer_ invalidate];
+  updateTimer_ = nil;
+  NSString *errorFormat = HGSLocalizedString(@"Authentication for '%@' failed."
+                                             @"Check your password.", nil);
+  NSString *userName = [[self keychainItem] username];
+  NSString *errorString = [NSString stringWithFormat:errorFormat, userName];
+  [self reportConnectionFailure:errorString successCode:kHGSUserMessageNoteType];
+  HGSLogDebug(@"DeliciousBookmarkSource authentication failure for account '%@'.",
+              userName);
+}
+
+-(void) fetchComplete:(NSData *)data {
+  bookmarkData_ = [data retain];
+  [self performSelector:currentCallback_];
+}
+
+-(void) fetchFailed:(NSError *)error {
+  currentlyFetching_ = NO;
+  HGSKeychainItem* keychainItem = [self keychainItem];
+  NSString *userName = [keychainItem username];
+  NSString *errorFormat = HGSLocalizedString(@"Fetch for '%@' failed. (%d)", nil);
+  NSString *errorString = [NSString stringWithFormat:errorFormat,
+                           userName, [error code]];
+  [self reportConnectionFailure:errorString successCode:kHGSUserMessageErrorType];
+  HGSLogDebug(@"DeliciousBookmarkSource connection failure (%d) '%@'.",
+              [error code], [error localizedDescription]);
+  
 }
 
 #pragma mark -
