@@ -1,4 +1,4 @@
- Copyright (c) 2009 Nathan Parry. All rights reserved.
+ Copyright (c) 2010 Nathan Parry. All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are
@@ -22,4 +22,18 @@
  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+This software additionally references or incorporates the following sources 
+of intellectual property, the license terms for which are set forth 
+in the sources themselves:
+
+*       oauthconsumer (http://code.google.com/p/oauthconsumer/)
+*       Yahoo! Social SDK (http://github.com/yahoo/yos-social-objc)
+          See the license in yahoo-yos-social-objc/License.txt
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 

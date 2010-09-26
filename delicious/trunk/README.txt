@@ -1,6 +1,9 @@
 Delicious bookmarks plugin
 http://nparry.com/qsb_delicious_plugin/
 
+v0.5
+* Support Yahoo based Delicious accounts
+
 v0.4
 Pre-built: http://nparry.com/software/google-quicksearchbox-plugins/delicious/Google-QSB-Delicious-v0.4.zip
 * Update to work with QSB Managanese release

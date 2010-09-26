@@ -46,6 +46,28 @@
 		</dict>
 		<dict>
 			<key>HGSExtensionClass</key>
+			<string>HGSAccountType</string>
+			<key>HGSExtensionIdentifier</key>
+			<string>com.nparry.qsb.delicious.yahooaccount</string>
+			<key>HGSExtensionUserVisibleName</key>
+			<string>Yahoo Delicious</string>
+			<key>HGSExtensionPoint</key>
+			<string>HGSAccountTypesExtensionPoint</string>
+			<key>HGSExtensionOfferedAccountType</key>
+			<string>com.nparry.qsb.delicious.yahooaccount</string>
+			<key>HGSExtensionOfferedAccountClass</key>
+			<string>YahooDeliciousAccount</string>
+			<key>QSBSetUpAccountViewNibName</key>
+			<string>SetUpYahooDeliciousAccountView</string>
+			<key>QSBSetUpAccountViewControllerClassName</key>
+			<string>SetUpYahooDeliciousAccountViewController</string>
+			<key>QSBEditAccountWindowNibName</key>
+			<string>EditYahooDeliciousAccount</string>
+			<key>QSBEditAccountWindowControllerClassName</key>
+			<string>EditYahooDeliciousAccountWindowController</string>
+		</dict>
+		<dict>
+			<key>HGSExtensionClass</key>
 			<string>DeliciousBookmarksSource</string>
 			<key>HGSExtensionIdentifier</key>
 			<string>com.nparry.qsb.delicious.source</string>
@@ -54,7 +76,10 @@
 			<key>HGSExtensionUserVisibleName</key>
 			<string>Delicious Bookmarks</string>
 			<key>HGSExtensionDesiredAccountTypes</key>
-			<string>com.nparry.qsb.delicious.account</string>
+			<array>
+				<string>com.nparry.qsb.delicious.account</string>
+				<string>com.nparry.qsb.delicious.yahooaccount</string>
+			</array>
 			<key>HGSExtensionIsEnabledByDefault</key>
 			<true/>
 			<key>HGSSearchSourceSupportedTypes</key>
