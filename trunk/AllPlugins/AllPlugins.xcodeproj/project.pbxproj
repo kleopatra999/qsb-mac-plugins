@@ -50,6 +50,7 @@
 				D48541B21166A0AA00D7B155 /* PBXTargetDependency */,
 				C9A69CA911D7FA370062706D /* PBXTargetDependency */,
 				D47D416211A358C2009CF09D /* PBXTargetDependency */,
+				7E08D098127EE28C0064D9AE /* PBXTargetDependency */,
 			);
 			name = AllPlugins;
 			productName = AllPlugins;
@@ -69,6 +70,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		7E08D099127EE2C50064D9AE /* Send_To_OF.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E08D096127EE2570064D9AE /* Send_To_OF.hgs */; };
+		7E08D09A127EE2DA0064D9AE /* Send_To_OF.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E08D096127EE2570064D9AE /* Send_To_OF.hgs */; };
 		8B2AB5AE1204C67D00C84242 /* FastScripts.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = D48541B01166A08900D7B155 /* FastScripts.hgs */; };
 		8BA0DB0911664EDE00839F5C /* KeychainItems.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC8A570115DCE0B00A6E783 /* KeychainItems.hgs */; };
 		8BA0DB0B11664EE500839F5C /* NetworkLocation.hgs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8BC02A1210F3BBC80029CDA1 /* NetworkLocation.hgs */; };
@@ -96,6 +99,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7E08D095127EE2570064D9AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E08D08E127EE2570064D9AE /* Send_To_OF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* Send_To_OF.hgs */;
+			remoteInfo = Send_To_OF;
+		};
+		7E08D097127EE28C0064D9AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E08D08E127EE2570064D9AE /* Send_To_OF.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* Send_To_OF */;
+			remoteInfo = Send_To_OF;
+		};
 		8B17FD771176580D00E7A908 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BC02A0210F3BBB80029CDA1 /* Project object */;
@@ -240,7 +257,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BC02A0210F3BBB80029CDA1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8BC02A2F10F3BBF60029CDA1 /* AllPlugins */;
+			remoteGlobalIDString = 8BC02A2F10F3BBF60029CDA1;
 			remoteInfo = AllPlugins;
 		};
 		C9A69CA311D7F9F60062706D /* PBXContainerItemProxy */ = {
@@ -306,6 +323,7 @@
 				8BA0DB0C11664EE700839F5C /* Send_To_RTM.hgs in CopyFiles */,
 				8BA0DB1B11664F1100839F5C /* YubNub-QSB.hgs in CopyFiles */,
 				C9A69CA711D7FA050062706D /* WAlpha.hgs in CopyFiles */,
+				7E08D099127EE2C50064D9AE /* Send_To_OF.hgs in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,12 +345,14 @@
 				8BFE024F121F17B200D61955 /* Send_To_RTM.hgs in CopyFiles */,
 				8BFE0250121F17B200D61955 /* YubNub-QSB.hgs in CopyFiles */,
 				8BFE0251121F17B200D61955 /* WAlpha.hgs in CopyFiles */,
+				7E08D09A127EE2DA0064D9AE /* Send_To_OF.hgs in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7E08D08E127EE2570064D9AE /* Send_To_OF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_OF.xcodeproj; path = ../Send_To_OF/trunk/Send_To_OF.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8B17FDAC117661DD00E7A908 /* googlecode_upload.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = googlecode_upload.py; sourceTree = "<group>"; };
 		8BA0DB1211664F0D00839F5C /* YubNub-QSB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "YubNub-QSB.xcodeproj"; path = "../YubNub-QSB/Trunk/YubNub-QSB.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Send_To_THL.xcodeproj; path = "../Send-To-THL/trunk/Send_To_THL.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -349,6 +369,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		7E08D08F127EE2570064D9AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E08D096127EE2570064D9AE /* Send_To_OF.hgs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8BA0DB1311664F0D00839F5C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +412,7 @@
 		8BC02A0010F3BBB80029CDA1 = {
 			isa = PBXGroup;
 			children = (
+				7E08D08E127EE2570064D9AE /* Send_To_OF.xcodeproj */,
 				8B17FDAC117661DD00E7A908 /* googlecode_upload.py */,
 				8BA0DB3711664FD900839F5C /* Send_To_THL.xcodeproj */,
 				8BC8A568115DCE0B00A6E783 /* KeychainItems.xcodeproj */,
@@ -471,7 +500,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 8BC02A0510F3BBB80029CDA1 /* Build configuration list for PBXProject "AllPlugins" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 8BC02A0010F3BBB80029CDA1;
 			projectDirPath = "";
 			projectReferences = (
@@ -498,6 +534,10 @@
 				{
 					ProductGroup = 8BA918DB1129BE75004A431F /* Products */;
 					ProjectRef = 8BA918DA1129BE75004A431F /* Rot13.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E08D08F127EE2570064D9AE /* Products */;
+					ProjectRef = 7E08D08E127EE2570064D9AE /* Send_To_OF.xcodeproj */;
 				},
 				{
 					ProductGroup = 8BC02A1410F3BBCE0029CDA1 /* Products */;
@@ -535,6 +575,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		7E08D096127EE2570064D9AE /* Send_To_OF.hgs */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Send_To_OF.hgs;
+			remoteRef = 7E08D095127EE2570064D9AE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8BA0DB1A11664F0D00839F5C /* YubNub-QSB.hgs */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -651,6 +698,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7E08D098127EE28C0064D9AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Send_To_OF;
+			targetProxy = 7E08D097127EE28C0064D9AE /* PBXContainerItemProxy */;
+		};
 		8B17FD781176580D00E7A908 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8BA0DB451166502000839F5C /* Package Plugins */;
